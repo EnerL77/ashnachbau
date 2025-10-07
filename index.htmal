@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Evermind — Voice-first Emotional Support</title>
+  <meta name="description" content="Evermind is a voice-first companion for emotional wellbeing." />
+  <style>
+    :root{
+      --bg:#0b0b0b; --fg:#fff; --muted:#b6b6b6; --card:#121212; --accent:#6cf0d2;
+      --maxw:1100px; --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin:0 auto;padding:clamp(16px,4vw,40px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:700;letter-spacing:.2px}
+    .cta{padding:.8rem 1.1rem;border-radius:999px;background:var(--fg);color:#111;font-weight:600;display:inline-flex;align-items:center;gap:.5rem}
+    .cta:hover{filter:brightness(.95)}
+    .hero{padding:clamp(40px,10vw,120px) 0;text-align:center}
+    .eyebrow{display:inline-block;padding:.35rem .7rem;border:1px solid #ffffff33;border-radius:999px;font-size:.85rem;color:var(--muted);margin-bottom:14px}
+    h1{font-size:clamp(36px,6.8vw,84px);line-height:1.02;margin:0 0 12px 0;letter-spacing:-.02em}
+    .sub{color:var(--muted);font-size:clamp(16px,2.4vw,22px);margin:0 auto 26px auto;max-width:800px}
+    .heroActions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .pill{display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1rem;background:var(--card);border:1px solid #2a2a2a;border-radius:999px}
+    /* Section */
+    section{padding:clamp(40px,8vw,90px) 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid #232323;border-radius:var(--radius);padding:22px}
+    .card h3{margin:0 0 8px 0;font-size:20px}
+    .card p{margin:0;color:#cfcfcf;line-height:1.5}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    /* Stories (simple slider) */
+    .stories{position:relative}
+    .story{background:#111;border:1px solid #262626;border-radius:var(--radius);padding:28px;display:none}
+    .story.active{display:block}
+    .story .name{margin-top:14px;font-weight:600}
+    .storyNav{margin-top:12px;display:flex;gap:8px;justify-content:center}
+    .dot{width:10px;height:10px;border-radius:50%;background:#3a3a3a;border:none;cursor:pointer}
+    .dot.active{background:var(--accent)}
+    /* Footer */
+    footer{border-top:1px solid #1f1f1f;color:#bdbdbd}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 0}
+    .small{font-size:13px;color:#9b9b9b}
+    /* ElevenLabs collapsed button spot under copy */
+    elevenlabs-convai{display:inline-block;margin-top:16px}
+  </style>
+</head>
+<body>
+  <header class="container nav">
+    <div class="brand">Evermind</div>
+    <a class="cta" href="#download" aria-label="Get Evermind">Get the app</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <span class="eyebrow">Voice-first companion</span>
+      <h1>AI support that listens, learns & adapts</h1>
+      <p class="sub">Evermind offers 24/7, privacy-first micro-support moments. Speak naturally, set gentle goals, and get evidence-informed nudges when you need them.</p>
+      <div class="heroActions">
+        <a class="cta" href="#download">Start free</a>
+        <span class="pill">No waitlists • Cancel anytime</span>
+      </div>
+
+      <!-- Optional: ElevenLabs collapsed widget genau unter der Subline -->
+      <!-- Entferne das Element, falls du kein Widget einbetten willst -->
+      <elevenlabs-convai agent-id="agent_6501k6wsvkvqf55av1b84g1ww65t" start-open="false"></elevenlabs-convai>
+      <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    </section>
+
+    <!-- VALUE PROPS -->
+    <section class="container">
+      <div class="grid-3">
+        <article class="card">
+          <h3>Always on</h3>
+          <p>Talk day or night. Evermind is available when therapy isn’t, and complements professional care.</p>
+        </article>
+        <article class="card">
+          <h3>Personal & private</h3>
+          <p>Conversations adapt to your goals. Data-minimal by design with clear controls.</p>
+        </article>
+        <article class="card">
+          <h3>Designed with experts</h3>
+          <p>Built with clinicians and based on established behavioural techniques.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- STORIES (Testimonials) -->
+    <section class="container stories" aria-label="Stories from users">
+      <div class="story active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+        <p>“Sometimes friends are busy. It helped to speak freely and feel heard in minutes.”</p>
+        <div class="name">— Amy</div>
+      </div>
+      <div class="story" role="group" aria-roledescription="slide" aria-label="2 of 3">
+        <p>“It nudged me to set kind goals and check in. Small steps, big difference.”</p>
+        <div class="name">— Jason</div>
+      </div>
+      <div class="story" role="group" aria-roledescription="slide" aria-label="3 of 3">
+        <p>“I could start talking right away without pressure. It felt natural.”</p>
+        <div class="name">— Cleo</div>
+      </div>
+      <div class="storyNav" role="tablist" aria-label="Select story">
+        <button class="dot active" aria-label="Story 1" aria-selected="true"></button>
+        <button class="dot" aria-label="Story 2"></button>
+        <button class="dot" aria-label="Story 3"></button>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="download" class="container" style="text-align:center">
+      <div class="card" style="display:inline-block;padding:28px 26px;">
+        <h3 style="margin:0 0 8px 0">Try Evermind now</h3>
+        <p class="small" style="margin:0 0 14px 0">Works on mobile and desktop. Voice optional.</p>
+        <a class="cta" href="#" aria-label="Download Evermind">Download</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="foot">
+      <span class="small">© <span id="y"></span> Evermind</span>
+      <span class="small">Privacy • Terms • Imprint</span>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // tiny stories slider
+    const dots=[...document.querySelectorAll('.dot')];
+    const slides=[...document.querySelectorAll('.story')];
+    function show(i){
+      slides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+      dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+      dots.forEach((d,idx)=>d.setAttribute('aria-selected', idx===i));
+    }
+    dots.forEach((d,i)=>d.addEventListener('click',()=>show(i)));
+    // optional auto-rotate
+    let i=0; setInterval(()=>{ i=(i+1)%slides.length; show(i); }, 6000);
+  </script>
+</body>
+</html>
