@@ -6,55 +6,30 @@
 <title>Evermind — This is just a dummy, Bro</title>
 <meta name="description" content="Evermind is developed with clinicians and grounded in psychological science." />
 <style>
-  :root{
-    --bg:#f6efe7;
-    --ink:#171a1c;
-    --muted:#4d5559;
-    --brand:#1d3b44;
-    --line:#e6ded6;
-    --radius:20px;
-    --maxw:1200px;
-  }
+  :root{ --bg:#f6efe7; --ink:#171a1c; --muted:#4d5559; --brand:#1d3b44; --line:#e6ded6; --radius:20px; --maxw:1200px; }
   *{box-sizing:border-box}
-  html,body{
-    margin:0;background:var(--bg);color:var(--ink);
-    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial
-  }
+  html,body{ margin:0; background:var(--bg); color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial }
   img{max-width:100%;display:block}
 
-  /* NAVIGATION */
+  /* NAV */
   .container{max-width:var(--maxw);margin:0 auto;padding:clamp(16px,4vw,28px)}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+  .logo{width:32px;height:auto;margin-right:8px;display:inline-block;vertical-align:middle}
   .navLinks{display:flex;gap:28px;align-items:center}
   .navLinks a{color:var(--ink);text-decoration:none;opacity:.9}
   .btn{
-    display:inline-flex;align-items:center;gap:.6rem;
-    background:var(--brand);color:#fff;text-decoration:none;
-    padding:.9rem 1.2rem;border-radius:999px;font-weight:600;
-    box-shadow:0 2px 0 #0c1c20;
-  }
+    display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;text-decoration:none;
+    padding:.9rem 1.2rem;border-radius:999px;font-weight:600;box-shadow:0 2px 0 #0c1c20}
   .btn svg{width:18px;height:18px;fill:#fff}
-  .nav .navLinks .btn{color:#fff!important;font-weight:600!important}
+  .nav .navLinks .btn{color:#fff!important}
   .nav .navLinks .btn svg{fill:#fff!important}
 
-  /* LOGO */
-  .logo{
-    width:32px;
-    height:auto;
-    margin-right:8px;
-    display:inline-block;
-    vertical-align:middle;
-  }
-
-  /* HERO LAYOUT */
+  /* HERO */
   .hero{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:28px;
-    align-items:stretch;
-    margin-top:clamp(10px,2vw,20px);
-  }
+    display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;
+    margin-top:clamp(10px,2vw,20px)}
   @media (max-width:1024px){.hero{grid-template-columns:1fr}}
   .copy{padding-right:clamp(0px,6vw,40px)}
   h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
@@ -63,42 +38,19 @@
   /* CTA */
   .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
   .cta{
-    display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;
-    border-radius:999px;border:1px solid #cfc7bf;background:#fff;
-    box-shadow:0 2px 0 #d6cdc4;text-decoration:none;color:var(--ink);font-weight:600;
-  }
+    display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;border-radius:999px;
+    border:1px solid #cfc7bf;background:#fff;box-shadow:0 2px 0 #d6cdc4;text-decoration:none;color:var(--ink);font-weight:600}
   .cta .circle{width:36px;height:36px;border-radius:999px;background:var(--brand);display:grid;place-items:center}
   .cta .circle svg{width:18px;height:18px;fill:#fff}
   .badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
   .badges img{height:44px}
 
-  /* HERO IMAGE randlos */
+  /* HERO image randlos */
   .heroImg{
-    position:relative;
-    margin:0!important;
-    border:none!important;
-    border-radius:0!important;
-    background:none!important;
-    box-shadow:none!important;
-    overflow:hidden!important;
-    width:100%!important;
-    min-height:clamp(360px,60vh,720px)!important;
-  }
+    position:relative;margin:0!important;border:none!important;border-radius:0!important;background:none!important;
+    box-shadow:none!important;overflow:hidden!important;width:100%!important;min-height:clamp(360px,60vh,720px)!important}
   .heroImg::after{content:none!important}
-  .heroImg img{
-    width:100%!important;
-    height:100%!important;
-    object-fit:cover!important;
-    display:block!important;
-    border-radius:0!important;
-  }
-
-  /* Optional Animations */
-  .screenInner.listening .blob{animation:breathe 1.8s ease-in-out infinite}
-  .screenInner.talking .blob{animation:talk 0.45s ease-in-out infinite}
-  .screenInner.connected .dot{background:#30e17a}
-  @keyframes breathe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.18)}50%{transform:scale(1.04);box-shadow:0 0 40px 8px rgba(255,255,255,.08)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.18)}}
-  @keyframes talk{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  .heroImg img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;border-radius:0!important}
 </style>
 </head>
 <body>
@@ -122,7 +74,6 @@
   <!-- HERO -->
   <main class="container">
     <section class="hero" aria-labelledby="h1">
-      <!-- LEFT COPY -->
       <div class="copy">
         <h1 id="h1">Hey,<br>this is just<br>a dummy, bro!</h1>
         <p class="lead">
@@ -146,100 +97,37 @@
         </div>
       </div>
 
-      <!-- RIGHT IMAGE -->
       <figure class="heroImg">
         <img src="https://images.unsplash.com/photo-1758273237963-002302368569?auto=format&fit=crop&q=80&w=1600" alt="Listening outdoors">
       </figure>
     </section>
   </main>
 
-  <!-- ELEVENLABS AGENT SCRIPT -->
+  <!-- ELEVENLABS (optional – unverändert) -->
   <script type="module">
     const AGENT_ID = "agent_6501k6wsvkvqf55av1b84g1ww65t";
+    const talkBtn=document.querySelector('.actions .cta');
+    let convo=null, Conversation=null;
 
-    const talkBtn = document.querySelector('.actions .cta');
-    const cancelBtn = document.querySelector('.cancel');
-    const screenInner = document.querySelector('.screenInner');
-    const promptEl = document.querySelector('.prompt');
-
-    let convo = null;
-    let Conversation = null;
-
-    function setStatus({connected=false,mode='idle'}){
-      if(!screenInner) return;
-      screenInner.classList.toggle('connected',connected);
-      ['listening','talking'].forEach(m=>screenInner.classList.toggle(m,m===mode));
-    }
-    function setPrompt(text){ if(promptEl && text) promptEl.textContent=text; }
-    function setTalkLabel(t){
-      const c=talkBtn?.querySelector('.circle');
-      if(!talkBtn) return;
-      talkBtn.innerHTML=t;
-      if(c) talkBtn.appendChild(c);
-    }
-    function showErr(m){console.error(m);setPrompt(m);setTalkLabel('Let’s talk');}
+    function setTalkLabel(t){ const c=talkBtn?.querySelector('.circle'); if(!talkBtn) return; talkBtn.innerHTML=t; if(c) talkBtn.appendChild(c); }
 
     async function ensureSdk(){
       if(Conversation) return Conversation;
       const m=await import('https://cdn.jsdelivr.net/npm/@elevenlabs/client/+esm');
-      if(!m?.Conversation) throw new Error('SDK export missing');
-      Conversation=m.Conversation;
-      console.log('[Evermind] ElevenLabs SDK loaded.');
-      return Conversation;
+      Conversation=m.Conversation; return Conversation;
     }
-
     async function startConversation(){
-      if(convo) return;
-      setTalkLabel('Connecting…');
-      try{await navigator.mediaDevices.getUserMedia({audio:true});}
-      catch(e){return showErr('Mic permission denied.');}
-      try{await ensureSdk();}
-      catch(e){return showErr('Could not load SDK.');}
-
-      try{
-        convo=await Conversation.startSession({
-          agentId:AGENT_ID,
-          connectionType:'webrtc',
-          onStatusChange:(s)=>{
-            console.log('[status]',s);
-            if(s==='connected'){
-              setStatus({connected:true,mode:'listening'});
-              setPrompt('Hey, I’m here — what’s on your mind?');
-              setTalkLabel('Talking…');
-            }
-            if(s==='disconnected') endConversation();
-          },
-          onModeChange:(m)=>{
-            if(m==='listening') setStatus({connected:true,mode:'listening'});
-            else if(m==='speaking') setStatus({connected:true,mode:'talking'});
-          },
-          onMessage:(msg)=>{
-            const t=msg?.text||msg?.message?.text||'';
-            if(t) setPrompt(t);
-          },
-          onError:(e)=>{console.error(e);showErr('Voice error');endConversation();}
-        });
-      }catch(e){console.error(e);showErr('Could not start session.');}
+      if(convo) return; setTalkLabel('Connecting…');
+      await navigator.mediaDevices.getUserMedia({audio:true}).catch(()=>{setTalkLabel('Let’s talk')});
+      await ensureSdk().catch(()=>setTalkLabel('Let’s talk'));
+      convo=await Conversation.startSession({agentId:AGENT_ID,connectionType:'webrtc',
+        onStatusChange:(s)=>{ if(s==='connected') setTalkLabel('Talking…'); if(s==='disconnected') endConversation(); },
+        onError:()=>endConversation()
+      }).catch(()=>setTalkLabel('Let’s talk'));
     }
-
-    async function endConversation(){
-      try{if(convo?.endSession) await convo.endSession();}catch(e){console.warn('endSession failed',e);}
-      try{convo?.close?.();}catch(_){}
-      convo=null;
-      setStatus({connected:false,mode:'idle'});
-      setPrompt('“Want a quick stress relief?”');
-      setTalkLabel('Let’s talk');
-    }
-
-    talkBtn?.addEventListener('click',(e)=>{
-      e.preventDefault();
-      if(convo) endConversation(); else startConversation();
-    });
-    cancelBtn?.addEventListener('click',(e)=>{
-      e.preventDefault();
-      endConversation();
-    });
-    window.addEventListener('beforeunload',()=>{try{convo?.endSession?.();}catch(_){}})
+    async function endConversation(){ try{await convo?.endSession?.()}catch(_){} try{convo?.close?.()}catch(_){} convo=null; setTalkLabel('Let’s talk'); }
+    talkBtn?.addEventListener('click',e=>{e.preventDefault(); if(convo) endConversation(); else startConversation();});
+    window.addEventListener('beforeunload',()=>{try{convo?.endSession?.()}catch(_){}})
   </script>
 </body>
 </html>
