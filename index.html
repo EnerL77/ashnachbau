@@ -208,13 +208,45 @@ async function startConversation(){
 }
 
 async function endConversation(){
-  try{await convo?.endSession();}catch(_){}
-  convo=null;setStatus({connected:false,mode:'idle'});
-  setPrompt('“Want a quick stress relief?”');setTalkLabel('Let’s talk');
+  try {
+    // Session ordnungsgemäß schließen
+    if (convo && typeof convo.endSession === "function") {
+      await convo.endSession();
+      console.log("[Evermind] Session closed via endSession()");
+    }
+  } catch (e) {
+    console.warn("[Evermind] endSession() failed:", e);
+  }
+
+  // ggf. WebRTC-Verbindung manuell trennen
+  try {
+    if (convo?.close) convo.close();
+  } catch (_) {}
+
+  // Zustand zurücksetzen
+  convo = null;
+  setStatus({ connected: false, mode: "idle" });
+  setPrompt("“Want a quick stress relief?”");
+  setTalkLabel("Let’s talk");
 }
 
-talkBtn?.addEventListener('click',e=>{e.preventDefault();console.log('Talk clicked');if(convo)endConversation();else startConversation();});
-cancelBtn?.addEventListener('click',e=>{e.preventDefault();console.log('Cancel clicked');endConversation();});
-</script>
-</body>
-</html>
+talkBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("Talk clicked");
+  if (convo) {
+    endConversation(); // 🔹 zweiter Klick beendet
+  } else {
+    startConversation();
+  }
+});
+
+cancelBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("Cancel clicked");
+  endConversation(); // 🔹 roter Kreis beendet
+});
+
+// optional: Sicherheit – beende Gespräch, wenn Tab geschlossen wird
+window.addEventListener("beforeunload", () => {
+  if (convo) convo.endSession?.();
+});
