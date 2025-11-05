@@ -7,23 +7,25 @@
 <meta name="description" content="Evermind is developed with clinicians and grounded in psychological science." />
 <style>
   :root{
-    --bg:#f6efe7;       /* helles Beige */
-    --ink:#171a1c;      /* dunkles Grau für Text */
-    --muted:#4d5559;    /* Sekundärtext */
-    --brand:#1d3b44;    /* Button/Navi dunkelgrün-blau */
-    --line:#e6ded6;     /* zarte Linie / Schatten */
+    --bg:#f6efe7;
+    --ink:#171a1c;
+    --muted:#4d5559;
+    --brand:#1d3b44;
+    --line:#e6ded6;
     --radius:20px;
     --maxw:1200px;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
   img{max-width:100%;display:block}
 
   /* --- NAV --- */
   .container{max-width:var(--maxw);margin:0 auto;padding:clamp(16px,4vw,28px)}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
-  .brandMark{width:20px;height:20px;border-radius:4px;background:conic-gradient(from 180deg,#2f6f7c, #5fc3b2, #2f6f7c)}
+  .brandMark{width:20px;height:20px;border-radius:4px;
+    background:conic-gradient(from 180deg,#2f6f7c,#5fc3b2,#2f6f7c)}
   .navLinks{display:flex;gap:28px;align-items:center}
   .navLinks a{color:var(--ink);text-decoration:none;opacity:.9}
   .btn{
@@ -39,277 +41,180 @@
     display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;
     margin-top:clamp(10px,2vw,20px);
   }
-  @media (max-width:1024px){ .hero{grid-template-columns:1fr} }
-
+  @media (max-width:1024px){.hero{grid-template-columns:1fr}}
   .copy{padding-right:clamp(0px,6vw,40px)}
-  h1{
-    font-size:clamp(40px,6.8vw,84px);
-    line-height:1.02;margin:0 0 14px 0;letter-spacing:-.01em;
-  }
-  .lead{
-    font-size:clamp(16px,2.4vw,20px);color:var(--muted);
-    line-height:1.5;margin:0 0 22px 0;max-width:42ch
-  }
+  h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
+  .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
 
-  /* CTA-Row */
+  /* CTA */
   .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
   .cta{
     display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;
-    border-radius:999px;border:1px solid #cfc7bf;background:#fff;box-shadow:0 2px 0 #d6cdc4;
-    text-decoration:none;color:var(--ink);font-weight:600;
+    border-radius:999px;border:1px solid #cfc7bf;background:#fff;
+    box-shadow:0 2px 0 #d6cdc4;text-decoration:none;color:var(--ink);font-weight:600;
   }
-  .cta .circle{
-    width:36px;height:36px;border-radius:999px;background:var(--brand);
-    display:grid;place-items:center
-  }
+  .cta .circle{width:36px;height:36px;border-radius:999px;background:var(--brand);
+    display:grid;place-items:center}
   .cta .circle svg{width:18px;height:18px;fill:#fff}
   .badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
   .badges img{height:44px}
 
-  /* --- PHONE MOCKUP --- */
-  .stage{
-    position:relative; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:18px;
-  }
-  @media (max-width:1024px){ .stage{grid-template-columns:1fr} }
+  /* PHONE MOCKUP */
+  .stage{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:18px}
+  @media (max-width:1024px){.stage{grid-template-columns:1fr}}
   .phoneWrap{display:flex;justify-content:center;z-index:2}
-  .phone{
-    width:min(68vw,340px); aspect-ratio:9/19; border-radius:32px;
-    background:#0e0e0e; border:2px solid #c4c4c4; box-shadow:0 10px 40px #bfb6ad inset, 0 30px 80px #0003;
-    position:relative;
-  }
-  .phone:before{ /* Lautsprecher/Notch */
-    content:""; position:absolute; top:10px; left:50%; transform:translateX(-50%);
-    width:24%; height:10px; border-radius:10px; background:#000; border:1px solid #2a2a2a;
-  }
-  .screen{position:absolute; inset:14px; border-radius:24px; overflow:hidden; background:#000}
-  .screenInner{position:absolute; inset:0; display:flex; flex-direction:column; color:#fff; font-size:18px}
-  .prompt{margin:22px auto 0 auto; width:85%; text-align:center; opacity:.9}
-  .blob{
-    width:74%; aspect-ratio:1/1; margin:22px auto; border-radius:1000px;
-    background:radial-gradient(60% 60% at 40% 45%, #fff 0%, #fff 55%, #e9e9e9 56%, #ddd 100%);
-  }
-  .bar{position:absolute; left:50%; transform:translateX(-50%); bottom:60px; width:56%; height:8px; border-radius:999px; background:#2f2f2f}
-  .controls{position:absolute; left:0; right:0; bottom:16px; display:flex; justify-content:center; gap:18px}
-  .dot, .cancel{
-    width:42px; height:42px; border-radius:999px; display:grid; place-items:center;
-    box-shadow:0 2px 0 #0006
-  }
+  .phone{width:min(68vw,340px);aspect-ratio:9/19;border-radius:32px;background:#0e0e0e;
+    border:2px solid #c4c4c4;box-shadow:0 10px 40px #bfb6ad inset,0 30px 80px #0003;position:relative}
+  .phone:before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);
+    width:24%;height:10px;border-radius:10px;background:#000;border:1px solid #2a2a2a}
+  .screen{position:absolute;inset:14px;border-radius:24px;overflow:hidden;background:#000}
+  .screenInner{position:absolute;inset:0;display:flex;flex-direction:column;color:#fff;font-size:18px}
+  .prompt{margin:22px auto 0;width:85%;text-align:center;opacity:.9}
+  .blob{width:74%;aspect-ratio:1/1;margin:22px auto;border-radius:1000px;
+    background:radial-gradient(60% 60% at 40% 45%,#fff 0%,#fff 55%,#e9e9e9 56%,#ddd 100%)}
+  .bar{position:absolute;left:50%;transform:translateX(-50%);bottom:60px;width:56%;height:8px;
+    border-radius:999px;background:#2f2f2f}
+  .controls{position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;gap:18px}
+  .dot,.cancel{width:42px;height:42px;border-radius:999px;display:grid;place-items:center;
+    box-shadow:0 2px 0 #0006}
   .dot{background:#fff}
   .cancel{background:#ef6b6b}
   .cancel svg{fill:#fff;width:18px;height:18px}
 
-  /* --- HERO IMAGE RIGHT --- */
-  .heroImg{
-    position:relative; border-radius:16px; overflow:hidden;
-    border:1px solid var(--line); background:#ddd;
-    min-height:360px;
-  }
-  .heroImg img{width:100%; height:100%; object-fit:cover}
+  /* HERO IMG */
+  .heroImg{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+    background:#ddd;min-height:360px}
+  .heroImg img{width:100%;height:100%;object-fit:cover}
+  .heroImg:after{content:"";position:absolute;inset:0;box-shadow:inset 0 -40px 80px #0000001a;pointer-events:none}
 
-  /* kleine Deko-Schatten */
-  .heroImg:after{
-    content:""; position:absolute; inset:0; box-shadow:inset 0 -40px 80px #0000001a; pointer-events:none;
-  }
-
-  /* ---- ElevenLabs Agent States (Animationen) ---- */
-  .screenInner.listening .blob { animation: breathe 1.8s ease-in-out infinite; }
-  .screenInner.talking .blob { animation: talk 0.45s ease-in-out infinite; }
-  .screenInner.connected .dot { background:#30e17a; } /* grün wenn verbunden */
-  @keyframes breathe {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.18); }
-    50% { transform: scale(1.04); box-shadow: 0 0 40px 8px rgba(255,255,255,0.08); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.18); }
-  }
-  @keyframes talk {
-    0%,100% { transform: scale(1); }
-    50% { transform: scale(1.06); }
-  }
+  /* Agent Animations */
+  .screenInner.listening .blob{animation:breathe 1.8s ease-in-out infinite}
+  .screenInner.talking .blob{animation:talk 0.45s ease-in-out infinite}
+  .screenInner.connected .dot{background:#30e17a}
+  @keyframes breathe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.18)}
+    50%{transform:scale(1.04);box-shadow:0 0 40px 8px rgba(255,255,255,.08)}
+    100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.18)}}
+  @keyframes talk{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 </style>
 </head>
 <body>
-  <!-- NAV -->
-  <header class="container nav" aria-label="Top Navigation">
-    <div class="brand">
-      <div class="brandMark" aria-hidden="true"></div>
-      Evermind
-    </div>
-    <nav class="navLinks" aria-label="Primary">
-      <a href="#">Home</a>
-      <a href="#">About us</a>
-      <a href="#">Ressources</a>
-      <a class="btn" href="#" aria-label="Download">
-        Download
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+<header class="container nav">
+  <div class="brand"><div class="brandMark"></div>Evermind</div>
+  <nav class="navLinks">
+    <a href="#">Home</a><a href="#">About us</a><a href="#">Resources</a>
+    <a class="btn" href="#">Download
+      <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+    </a>
+  </nav>
+</header>
+
+<main class="container">
+<section class="hero">
+  <div class="copy">
+    <h1>Hey,<br>what’s up<br>right now?</h1>
+    <p class="lead">Evermind isn’t just another wellness app. It’s developed with clinicians,
+      trained on evidence-based methods, and tested for real impact. Every
+      interaction is grounded in proven psychological science.</p>
+
+    <div class="actions">
+      <a class="cta" href="#" aria-label="Let's talk">
+        Let’s talk
+        <span class="circle"><svg viewBox="0 0 24 24"><path d="M21 15.46V19a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3.54a2 2 0 0 1 2 1.72l.3 2a2 2 0 0 1-.57 1.73l-1.2 1.2a16 16 0 0 0 6.45 6.45l1.2-1.2a2 2 0 0 1 1.73-.57l2 .3A2 2 0 0 1 21 15.46Z" fill="#fff"/></svg></span>
       </a>
-    </nav>
-  </header>
+    </div>
 
-  <!-- HERO -->
-  <main class="container">
-    <section class="hero" aria-labelledby="h1">
-      <!-- LEFT COPY -->
-      <div class="copy">
-        <h1 id="h1">Hey,<br>what’s up<br>right now?</h1>
-        <p class="lead">
-          Evermind isn’t just another wellness app. It’s developed with clinicians,
-          trained on evidence-based methods, and tested for real impact. Every
-          interaction is grounded in proven psychological science.
-        </p>
-        <div class="actions">
-          <a class="cta" href="#" aria-label="Let's talk">
-            Let’s talk
-            <span class="circle" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M21 15.46V19a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3.54a 2 2 0 0 1 2 1.72l.3 2a2 2 0 0 1-.57 1.73l-1.2 1.2a16 16 0 0 0 6.45 6.45l1.2-1.2a2 2 0 0 1 1.73-.57l2 .3A2 2 0 0 1 21 15.46Z" fill="#fff"/></svg>
-            </span>
-          </a>
-        </div>
-        <div class="badges" aria-label="Store badges">
-          <a href="#" aria-label="Download on the App Store">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-          </a>
-          <a href="#" aria-label="Get it on Google Play">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
-          </a>
-        </div>
-      </div>
+    <div class="badges">
+      <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"></a>
+      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"></a>
+    </div>
+  </div>
 
-      <!-- RIGHT SIDE: STAGE (PHONE + IMAGE) -->
-      <div class="stage">
-        <!-- Phone in der Mitte/links -->
-        <div class="phoneWrap">
-          <div class="phone" aria-label="Evermind flat phone mockup">
-            <div class="screen">
-              <div class="screenInner">
-                <div class="prompt">“Want a quick stress relief?”</div>
-                <div class="blob" aria-hidden="true"></div>
-                <div class="bar" aria-hidden="true"></div>
-                <div class="controls">
-                  <div class="dot" aria-hidden="true"></div>
-                  <div class="cancel" title="Tap to cancel">
-                    <svg viewBox="0 0 24 24"><path d="M18.3 5.7L5.7 18.3M5.7 5.7l12.6 12.6"/></svg>
-                  </div>
-                </div>
-              </div>
+  <div class="stage">
+    <div class="phoneWrap">
+      <div class="phone">
+        <div class="screen">
+          <div class="screenInner">
+            <div class="prompt">“Want a quick stress relief?”</div>
+            <div class="blob"></div>
+            <div class="bar"></div>
+            <div class="controls">
+              <div class="dot"></div>
+              <div class="cancel"><svg viewBox="0 0 24 24"><path d="M18.3 5.7L5.7 18.3M5.7 5.7l12.6 12.6"/></svg></div>
             </div>
           </div>
         </div>
-
-        <!-- Großes Bild rechts -->
-        <figure class="heroImg">
-          <img src="https://images.unsplash.com/photo-1528763380143-65b3ac5f0e3a?q=80&w=1400&auto=format&fit=crop" alt="Person listening with earbuds outdoors">
-        </figure>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <!-- ElevenLabs Agent-Integration -->
-  <script type="module">
-    // ➜ HIER DEINE AGENT-ID EINTRAGEN:
-    const AGENT_ID = agent_6501k6wsvkvqf55av1b84g1ww65t;
+    <figure class="heroImg">
+      <img src="https://images.unsplash.com/photo-1528763380143-65b3ac5f0e3a?q=80&w=1400&auto=format&fit=crop" alt="Person listening">
+    </figure>
+  </div>
+</section>
+</main>
 
-    // Lightweight ESM-Import des ElevenLabs-Web SDK
-    import { Conversation } from 'https://cdn.jsdelivr.net/npm/@elevenlabs/client/+esm';
+<!-- === ELEVENLABS AGENT SCRIPT === -->
+<script type="module">
+const AGENT_ID = agent_6501k6wsvkvqf55av1b84g1ww65t;
 
-    // UI-Refs
-    const talkBtn     = document.querySelector('.actions .cta');     // "Let’s talk"
-    const cancelBtn   = document.querySelector('.cancel');           // roter Kreis
-    const screenInner = document.querySelector('.screenInner');
-    const promptEl    = document.querySelector('.prompt');
+const talkBtn     = document.querySelector('.actions .cta');
+const cancelBtn   = document.querySelector('.cancel');
+const screenInner = document.querySelector('.screenInner');
+const promptEl    = document.querySelector('.prompt');
 
-    let convo = null;
+let convo = null;
+let Conversation = null;
 
-    // --- UI helpers ---
-    function setStatus({connected=false, mode='idle'}){
-      screenInner.classList.toggle('connected', connected);
-      ['listening','talking'].forEach(m => screenInner.classList.toggle(m, m===mode));
-    }
-    function setPrompt(text){
-      if (!text) return;
-      promptEl.textContent = text.length > 140 ? text.slice(0,137)+'…' : text;
-    }
-    function setTalkButtonLabel(text){
-      // Text im Anchor ändern, SVG-Kugel erhalten
-      const circle = talkBtn.querySelector('.circle');
-      talkBtn.innerHTML = text;
-      if (circle) talkBtn.appendChild(circle);
-    }
+function setStatus({connected=false,mode='idle'}){
+  screenInner.classList.toggle('connected',connected);
+  ['listening','talking'].forEach(m=>screenInner.classList.toggle(m,m===mode));
+}
+function setPrompt(text){ if(text) promptEl.textContent=text; }
+function setTalkLabel(t){ const c=talkBtn.querySelector('.circle'); talkBtn.innerHTML=t; if(c) talkBtn.appendChild(c); }
+function showErr(m){console.error(m);setPrompt(m);setTalkLabel('Let’s talk');}
 
-    // --- Start Agent ---
-    async function startConversation(){
-      if (convo) return; // bereits aktiv
-      setTalkButtonLabel('Connecting…');
+async function ensureSdk(){
+  if(Conversation) return Conversation;
+  try{
+    const m=await import('https://cdn.jsdelivr.net/npm/@elevenlabs/client/+esm');
+    Conversation=m.Conversation;
+    console.log('[Evermind] ElevenLabs SDK loaded.');
+  }catch(e){console.error(e);throw new Error('SDK load failed');}
+  return Conversation;
+}
 
-      // Mikrofonberechtigung abfragen (bessere UX)
-      try {
-        await navigator.mediaDevices.getUserMedia({ audio: true });
-      } catch (e) {
-        setPrompt('Mic permission denied.');
-        setTalkButtonLabel('Let’s talk');
-        return;
-      }
-
-      setPrompt('Connecting to Evermind…');
-      setStatus({connected:false, mode:'idle'});
-
-      try {
-        convo = await Conversation.startSession({
-          agentId: AGENT_ID,          // <-- deine Agent-ID
-          connectionType: 'webrtc',   // geringe Latenz
-          onStatusChange: (s) => {
-            if (s === 'connected'){
-              setStatus({connected:true, mode:'listening'});
-              setPrompt('Hey, I’m here — what’s on your mind?');
-              setTalkButtonLabel('Talking…');
-            }
-            if (s === 'disconnected'){
-              endConversation();
-            }
-          },
-          onModeChange: (m) => {
-            if (m === 'listening') setStatus({connected:true, mode:'listening'});
-            else if (m === 'speaking') setStatus({connected:true, mode:'talking'});
-            else setStatus({connected:true, mode:'idle'});
-          },
-          onMessage: (msg) => {
-            const t = msg?.text || msg?.message?.text || '';
-            if (t) setPrompt(t);
-          },
-          onError: (e) => {
-            console.error(e);
-            setPrompt('Error — please try again.');
-            setTalkButtonLabel('Let’s talk');
-            setStatus({connected:false, mode:'idle'});
-            convo = null;
-          }
-        });
-      } catch (e) {
-        console.error(e);
-        setPrompt('Could not start session.');
-        setTalkButtonLabel('Let’s talk');
-        setStatus({connected:false, mode:'idle'});
-        convo = null;
-      }
-    }
-
-    // --- Stop Agent ---
-    async function endConversation(){
-      try { await convo?.endSession(); } catch(e) {}
-      convo = null;
-      setStatus({connected:false, mode:'idle'});
-      setPrompt('“Want a quick stress relief?”');
-      setTalkButtonLabel('Let’s talk');
-    }
-
-    // --- Bind Buttons ---
-    talkBtn?.addEventListener('click', (e) => {
-      e.preventDefault();
-      // Toggle-Verhalten: Wenn aktiv → beenden, sonst starten
-      if (convo) endConversation(); else startConversation();
+async function startConversation(){
+  if(convo) return;
+  setTalkLabel('Connecting…');
+  try{await navigator.mediaDevices.getUserMedia({audio:true});}
+  catch(e){return showErr('Mic permission denied.');}
+  try{await ensureSdk();}
+  catch(e){return showErr('Could not load SDK.');}
+  try{
+    convo=await Conversation.startSession({
+      agentId:AGENT_ID,connectionType:'webrtc',
+      onStatusChange:(s)=>{
+        console.log('[status]',s);
+        if(s==='connected'){setStatus({connected:true,mode:'listening'});
+          setPrompt('Hey, I’m here — what’s on your mind?');setTalkLabel('Talking…');}
+        if(s==='disconnected') endConversation();
+      },
+      onModeChange:(m)=>{if(m==='listening')setStatus({connected:true,mode:'listening'});
+                         else if(m==='speaking')setStatus({connected:true,mode:'talking'});},
+      onMessage:(msg)=>{const t=msg?.text||msg?.message?.text||'';if(t)setPrompt(t);},
+      onError:(e)=>{console.error(e);showErr('Voice error');endConversation();}
     });
-    cancelBtn?.addEventListener('click', (e) => {
-      e.preventDefault();
-      endConversation();
-    });
-  </script>
+  }catch(e){console.error(e);showErr('Could not start session.');}
+}
+
+async function endConversation(){
+  try{await convo?.endSession();}catch(_){}
+  convo=null;setStatus({connected:false,mode:'idle'});
+  setPrompt('“Want a quick stress relief?”');setTalkLabel('Let’s talk');
+}
+
+talkBtn?.addEventListener('click',e=>{e.preventDefault();console.log('Talk clicked');if(convo)endConversation();else startConversation();});
+cancelBtn?.addEventListener('click',e=>{e.preventDefault();console.log('Cancel clicked');endConversation();});
+</script>
 </body>
 </html>
