@@ -83,6 +83,23 @@
     box-shadow:none!important;overflow:hidden!important;width:100%!important;min-height:clamp(360px,60vh,720px)!important}
   .heroImg::after{content:none!important}
   .heroImg img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;border-radius:0!important}
+  /* FEATURES / BENEFITS */
+.section{padding:clamp(28px,6vw,56px) 0}
+.kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-size:.9rem;margin:0 0 6px}
+.h2{font-size:clamp(28px,4.6vw,44px);line-height:1.1;margin:0 0 10px}
+.sub{color:var(--muted);max-width:70ch;margin:0 0 24px}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
+@media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.features{grid-template-columns:1fr}}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:18px 18px 16px;box-shadow:0 2px 0 #e8e1d9
+}
+.card h3{margin:10px 0 6px;font-size:1.1rem}
+.card p{margin:0;color:var(--muted)}
+.icon{width:28px;height:28px;color:var(--brand)}
+
 </style>
 </head>
 <body>
@@ -135,6 +152,64 @@
       </figure>
     </section>
   </main>
+
+  <!-- FEATURES / BENEFITS -->
+<section id="features" class="section container" aria-labelledby="features-h">
+  <p class="kicker">Benefits</p>
+  <h2 id="features-h" class="h2">What you get with Evermind</h2>
+
+  <div class="features">
+    <article class="card">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 12a8 8 0 1016 0A8 8 0 004 12zm9-4h-2v5l4 2" fill="currentColor"/>
+      </svg>
+      <h3>Faster relief</h3>
+      <p>2–5-min Micro-Dialoge, wann immer du sie brauchst – ohne Termin & Warten.</p>
+    </article>
+
+    <article class="card">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2l7 4v6c0 5-3.7 9.3-7 10-3.3-.7-7-5-7-10V6l7-4z" fill="currentColor"/>
+      </svg>
+      <h3>Privacy-first</h3>
+      <p>EU-Hosting, Verschlüsselung in Transit & at Rest, keine Third-Party Ads.</p>
+    </article>
+
+    <article class="card">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3l3 6 6 .9-4.5 4.2 1.1 6.5L12 17l-5.6 3.6L7.5 14 3 9.9 9 9z" fill="currentColor"/>
+      </svg>
+      <h3>Clinician-guided</h3>
+      <p>CBT/ACT-Muster mit klinischem Input – keine generische Smalltalk-KI.</p>
+    </article>
+
+    <!-- Optional: 3 weitere Cards -->
+    <article class="card">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h14M5 7h9M5 17h9" fill="currentColor"/>
+      </svg>
+      <h3>Build habits</h3>
+      <p>Tägliche Nudges & kurze Routinen, die messbar wirken.</p>
+    </article>
+
+    <article class="card">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 12l7 7L21 5" fill="currentColor"/>
+      </svg>
+      <h3>Always on</h3>
+      <p>24/7 verfügbar, auch offline mit kurzen Sessions (optional).</p>
+    </article>
+
+    <article class="card">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 6v12m6-6H6" fill="currentColor"/>
+      </svg>
+      <h3>Adds, not replaces</h3>
+      <p>Ergänzt Therapie & Coaching – kein Medizinprodukt, kein Ersatz.</p>
+    </article>
+  </div>
+</section>
+
 
   <!-- ELEVENLABS -->
   <script type="module">
