@@ -107,7 +107,26 @@
   .h2{font-size:clamp(28px,4.6vw,44px);line-height:1.1;margin:0 0 10px}
   .sub{color:var(--muted);max-width:70ch;margin:0 0 24px}
 
-  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
+.features{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,260px)); /* 3 Spalten mit fixer max-Breite */
+  gap:22px;
+  margin:40px auto;
+  justify-content:center;     /* Grid als Ganzes mittig */
+  justify-items:center;       /* Inhalt in jeder Zelle mittig */
+  text-align:center;          /* Text zentriert */
+}
+
+@media (max-width:900px){
+  .features{
+    grid-template-columns:repeat(2, minmax(0,260px));
+  }
+}
+@media (max-width:640px){
+  .features{
+    grid-template-columns:1fr;
+  }
+}
   @media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
   @media (max-width:640px){.features{grid-template-columns:1fr}}
   .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 0 #e8e1d9}
