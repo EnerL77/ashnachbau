@@ -6,156 +6,169 @@
 <title>Evermind — This is just a dummy</title>
 <meta name="description" content="Evermind is developed with doctors and therapists and is grounded in psychological science." />
 <style>
-:root{ --bg:#f6efe7; --ink:#171a1c; --muted:#4d5559; --brand:#1d3b44; --line:#e6ded6; --radius:20px; --maxw:1200px; }
-*{box-sizing:border-box}
-html,body{ margin:0; background:var(--bg); color:var(--ink);
-font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial }
-img{max-width:100%;display:block}
+  :root{ --bg:#f6efe7; --ink:#171a1c; --muted:#4d5559; --brand:#1d3b44; --line:#e6ded6; --radius:20px; --maxw:1200px; }
+  *{box-sizing:border-box}
+  html,body{ margin:0; background:var(--bg); color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial }
+  img{max-width:100%;display:block}
+  a{text-decoration:none}
 
-/* LAYOUT */
-.container{max-width:var(--maxw);margin:0 auto;padding:clamp(16px,4vw,28px)}
+  /* LAYOUT */
+  .container{max-width:var(--maxw);margin:0 auto;padding:clamp(16px,4vw,28px)}
 
-/* NAV */
-.nav{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:24px;}
-.brand{display:flex;align-items:center;gap:10px}
-.logo{width: clamp(80px, 10vw, 150px);height:auto;display:inline-block;vertical-align:middle;transition: transform .2s ease;}
-.logo:hover{ transform: translateY(-1px) }
-.navLinks{display:flex;gap:28px;align-items:center;justify-content:flex-end;flex-wrap:wrap;}
-.navLinks a{color:var(--ink);text-decoration:none;opacity:.9}
-.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;text-decoration:none;
-  padding:.9rem 1.2rem;border-radius:999px;font-weight:600;box-shadow:0 2px 0 #0c1c20}
-.btn svg{width:18px;height:18px;fill:#fff}
-.nav .navLinks .btn{color:#fff!important}
-.nav .navLinks .btn svg{fill:#fff!important}
+  /* NAV */
+  .nav{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:24px;}
+  .brand{display:flex;align-items:center;gap:10px}
+  .logo{width: clamp(80px, 10vw, 150px);height:auto;display:inline-block;vertical-align:middle;transition: transform .2s ease;}
+  .logo:hover{ transform: translateY(-1px) }
+  .navLinks{display:flex;gap:28px;align-items:center;justify-content:flex-end;flex-wrap:wrap;}
+  .navLinks a{color:var(--ink);opacity:.9}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;
+    padding:.9rem 1.2rem;border-radius:999px;font-weight:600;box-shadow:0 2px 0 #0c1c20}
 
-/* Language switch */
-.langSwitch{display:inline-flex;gap:6px;align-items:center;margin-right:6px}
-.langBtn{font:inherit;padding:.4rem .7rem;border:1px solid var(--line);background:#fff;border-radius:999px;cursor:pointer;opacity:.9}
-.langBtn.is-active{border-color:var(--brand);box-shadow:0 1px 0 #dcd3ca;opacity:1;font-weight:700}
+  /* Language switch (optional) */
+  .langSwitch{display:inline-flex;gap:6px;align-items:center;margin-right:6px}
+  .langBtn{font:inherit;padding:.4rem .7rem;border:1px solid var(--line);background:#fff;border-radius:999px;cursor:pointer;opacity:.9}
+  .langBtn.is-active{border-color:var(--brand);box-shadow:0 1px 0 #dcd3ca;opacity:1;font-weight:700}
 
-/* Kleine Screens feinjustieren */
-@media (max-width: 820px){
-  .navLinks{gap:20px}
-  .btn{padding:.8rem 1.1rem}
-}
-@media (max-width: 640px){
-  .container{padding:16px}
-  .logo{ width: clamp(72px, 22vw, 110px) }
-  .navLinks{gap:16px}
-}
+  /* Responsive nav */
+  @media (max-width: 820px){ .navLinks{gap:20px} .btn{padding:.8rem 1.1rem} }
+  @media (max-width: 640px){ .container{padding:16px} .logo{ width: clamp(72px, 22vw, 110px) } .navLinks{gap:16px} }
 
-/* HERO */
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;margin-top:clamp(10px,2vw,20px)}
-@media (max-width:1024px){.hero{grid-template-columns:1fr}}
-.copy{padding-right:clamp(0px,6vw,40px)}
-h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
-.lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;margin-top:clamp(10px,2vw,20px)}
+  @media (max-width:1024px){.hero{grid-template-columns:1fr}}
+  .copy{padding-right:clamp(0px,6vw,40px)}
+  h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
+  .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
 
-/* CTA */
-.actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-.cta{display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;border-radius:999px;
-  border:1px solid #cfc7bf;background:#fff;box-shadow:0 2px 0 #d6cdc4;text-decoration:none;color:var(--ink);font-weight:600}
-.cta .circle{width:36px;height:36px;border-radius:999px;background:var(--brand);display:grid;place-items:center}
-.cta .circle svg{width:18px;height:18px;fill:#fff}
+  /* CTA */
+  .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .cta{display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;border-radius:999px;
+    border:1px solid #cfc7bf;background:#fff;box-shadow:0 2px 0 #d6cdc4;color:var(--ink);font-weight:600}
+  .cta .circle{width:36px;height:36px;border-radius:999px;background:var(--brand);display:grid;place-items:center}
+  .cta .circle svg{width:18px;height:18px;fill:#fff}
 
-/* Voice visualizer (deaktiv bis „Talking…“) */
-.viz{display:inline-grid;grid-auto-flow:column;gap:4px;align-items:end;height:18px;margin-left:6px}
-.viz .bar{width:3px;height:6px;background:var(--brand);border-radius:999px;opacity:.9}
-@keyframes beat{0%,100%{height:6px}50%{height:18px}}
-.cta.is-talking .viz .bar{animation:beat 1.2s ease-in-out infinite}
-.cta.is-talking .viz .bar:nth-child(2){animation-delay:.1s}
-.cta.is-talking .viz .bar:nth-child(3){animation-delay:.2s}
-.cta.is-talking .viz .bar:nth-child(4){animation-delay:.3s}
-.cta.is-talking .viz .bar:nth-child(5){animation-delay:.4s}
-.cta.is-talking .viz .bar:nth-child(6){animation-delay:.5s}
+  /* Voice visualizer (idle/talking) */
+  .viz{display:inline-grid;grid-auto-flow:column;gap:6px;align-items:end;height:18px;margin-left:8px}
+  .viz .bar{width:3px;height:6px;border-radius:999px;background:currentColor;opacity:.95}
+  @keyframes beat{0%,100%{height:6px}50%{height:18px}}
+  /* Idle: sehr dezent, Talking: aktiv */
+  .cta.is-idle .viz .bar{animation:beat 3s ease-in-out infinite}
+  .cta.is-idle .viz .bar:nth-child(odd){animation-delay:.2s}
+  .cta.is-talking .viz .bar{animation:beat 1.1s ease-in-out infinite}
+  .cta.is-talking .viz .bar:nth-child(2){animation-delay:.08s}
+  .cta.is-talking .viz .bar:nth-child(3){animation-delay:.16s}
+  .cta.is-talking .viz .bar:nth-child(4){animation-delay:.24s}
+  .cta.is-talking .viz .bar:nth-child(5){animation-delay:.32s}
+  .cta.is-talking .viz .bar:nth-child(6){animation-delay:.40s}
 
-/* Badges */
-.badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.badges img{height:44px}
+  /* Badges */
+  .badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .badges img{height:44px}
 
-/* HERO image randlos */
-.heroImg{position:relative;margin:0!important;border:none!important;border-radius:0!important;background:none!important;
-  box-shadow:none!important;overflow:hidden!important;width:100%!important;min-height:clamp(360px,60vh,720px)!important}
-.heroImg::after{content:none!important}
-.heroImg img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;border-radius:0!important}
+  /* HERO image randlos */
+  .heroImg{position:relative;margin:0!important;border:none!important;border-radius:0!important;background:none!important;
+    box-shadow:none!important;overflow:hidden!important;width:100%!important;min-height:clamp(360px,60vh,720px)!important}
+  .heroImg::after{content:none!important}
+  .heroImg img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;border-radius:0!important}
 
-/* FEATURES / BENEFITS */
-.section{padding:clamp(28px,6vw,56px) 0}
-.kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-size:.9rem;margin:0 0 6px}
-.h2{font-size:clamp(28px,4.6vw,44px);line-height:1.1;margin:0 0 10px}
-.sub{color:var(--muted);max-width:70ch;margin:0 0 24px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
-@media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.features{grid-template-columns:1fr}}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 2px 0 #e8e1d9}
-.card h3{margin:10px 0 6px;font-size:1.1rem}
-.card p{margin:0;color:var(--muted)}
-.icon{width:28px;height:28px;color:var(--brand)}
+  /* BILLBOARD (full-bleed image with copy overlay) */
+  .billboard{position:relative;margin:0;padding:0;width:100%;overflow:hidden;border-radius:0}
+  .billboard .bg{width:100%;height:min(65vh,620px);object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
+  .billboard .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(246,239,231,0), rgba(246,239,231,.85))}
+  .billboard .copy{position:absolute;inset:0;display:grid;align-content:end;padding:clamp(18px,5vw,44px)}
+  .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;letter-spacing:-.015em;margin:0 0 8px}
+  .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
 
-/* WAITLIST */
-.waitlist{background:#fff;border:1px solid var(--line);border-radius:20px;padding:48px 24px;text-align:center;box-shadow:0 2px 0 #e8e1d9}
-.field{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px}
-.field input[type="email"]{padding:14px 18px;border:1px solid #cfc7bf;border-radius:999px;min-width:280px;font-size:1rem;background:#fff}
-footer{color:var(--muted);text-align:center;padding:48px 0}
-footer a{color:var(--muted);text-decoration:none}
+  /* FEATURES / BENEFITS */
+  .section{padding:clamp(28px,6vw,56px) 0}
+  .kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-size:.9rem;margin:0 0 6px}
+  .h2{font-size:clamp(28px,4.6vw,44px);line-height:1.1;margin:0 0 10px}
+  .sub{color:var(--muted);max-width:70ch;margin:0 0 24px}
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
+  @media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.features{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 2px 0 #e8e1d9}
+  .card h3{margin:10px 0 6px;font-size:1.1rem}
+  .card p{margin:0;color:var(--muted)}
+  .icon{width:28px;height:28px;color:var(--brand)}
+
+  /* HOW */
+  .howGrid{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
+  @media (max-width:900px){.howGrid{grid-template-columns:1fr}}
+
+  /* WAITLIST (inverse) */
+  .section--inverse{background:var(--ink);color:#fff;border-top:1px solid #0e1214;border-bottom:1px solid #0e1214}
+  .section--inverse .waitlist{background:transparent;border:1px solid rgba(255,255,255,.15);box-shadow:none;border-radius:20px;padding:48px 24px;text-align:center}
+  .section--inverse .h2,.section--inverse .sub{color:#fff}
+  .section--inverse .sub{opacity:.85}
+  .section--inverse .field{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .section--inverse .field input[type="email"]{padding:14px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;min-width:280px;font-size:1rem;background:transparent;color:#fff}
+  .section--inverse .field input[type="email"]::placeholder{color:rgba(255,255,255,.6)}
+  .section--inverse .btn{background:#fff;color:var(--ink);box-shadow:0 2px 0 #d6cdc4;border:1px solid #cfc7bf}
+
+  footer{color:var(--muted);text-align:center;padding:48px 0}
+  footer a{color:var(--muted)}
 </style>
 </head>
 <body>
-<!-- NAV -->
-<header class="container nav" aria-label="Top Navigation">
-  <div class="brand">
-    <img src="/public/logo.png" alt="Evermind logo" class="logo">
-  </div>
-  <nav class="navLinks" aria-label="Primary">
-    <a href="#" data-i18n="nav.home">Home</a>
-    <a href="#features" data-i18n="nav.features">Features</a>
-    <div class="langSwitch" role="group" aria-label="Language switch">
-      <button type="button" data-lang="en" class="langBtn is-active">EN</button>
-      <button type="button" data-lang="de" class="langBtn">DE</button>
+  <!-- NAV -->
+  <header class="container nav" aria-label="Top Navigation">
+    <div class="brand">
+      <img src="/public/logo.png" alt="Evermind logo" class="logo">
     </div>
-  </nav>
-</header>
+    <nav class="navLinks" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <div class="langSwitch" role="group" aria-label="Language switch">
+        <button type="button" data-lang="en" class="langBtn is-active">EN</button>
+        <button type="button" data-lang="de" class="langBtn">DE</button>
+      </div>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<main class="container">
-  <section class="hero" aria-labelledby="h1">
-    <div class="copy">
-      <h1 id="h1" data-i18n="hero.title">The Voice<br>that cares</h1>
-      <p class="lead" data-i18n="hero.lead">
-        Evermind isn’t just another chat bot. It’s developed with clinicians and therapists and is
-        trained on evidence-based methods, tested for real impact. Every
-        interaction is grounded in proven psychological science.
-      </p>
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero" aria-labelledby="h1">
+      <div class="copy">
+        <h1 id="h1">The Voice<br>that cares</h1>
+        <p class="lead">
+          Evermind isn’t just another chat bot. It’s developed with clinicians and therapists and is
+          trained on evidence-based methods, tested for real impact. Every interaction is grounded in psychological science.
+        </p>
 
-      <div class="actions">
-        <!-- CTA mit Label + Icon + Voice Wave -->
-        <a class="cta" href="#" aria-label="Let's talk" data-i18n="cta.talk">
-          <span class="label">Let’s talk</span>
-          <span class="circle" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M21 15.46V19a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3.54a2 2 0 0 1 2 1.72l.3 2a2 2 0 0 1-.57 1.73l-1.2 1.2a16 16 0 0 0 6.45 6.45l1.2-1.2a2 2 0 0 1 1.73-.57l2 .3A2 2 0 0 1 21 15.46Z" fill="#fff"/></svg>
-          </span>
-          <span class="viz" aria-hidden="true">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-          </span>
-        </a>
+        <div class="actions">
+          <!-- Start/Stop CTA mit Voice Visualizer -->
+          <a class="cta is-idle" id="talkBtn" href="#" aria-label="Let's talk" aria-pressed="false"
+             data-label-start="Let’s talk" data-label-connecting="Connecting…" data-label-talking="Talking…" data-label-stop="End call">
+            <span class="label">Let’s talk</span>
+            <span class="circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M21 15.46V19a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3.54a2 2 0 0 1 2 1.72l.3 2a2 2 0 0 1-.57 1.73l-1.2 1.2a16 16 0 0 0 6.45 6.45l1.2-1.2a2 2 0 0 1 1.73-.57l2 .3A2 2 0 0 1 21 15.46Z" fill="#fff"/></svg>
+            </span>
+            <span class="viz" aria-hidden="true">
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </span>
+          </a>
+        </div>
+
+        <div class="badges" aria-label="Store badges">
+          <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
+        </div>
       </div>
 
-      <div class="badges" aria-label="Store badges">
-        <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
-      </div>
-    </div>
+      <figure class="heroImg">
+        <img src="/public/hero2.png" alt="Listening outdoors">
+      </figure>
+    </section>
+  </main>
 
-    <figure class="heroImg">
-      <img src="/public/hero2.png" alt="Listening outdoors">
-    </figure>
-  </section>
-</main>
-
-   <!-- BIG BILLBOARD #1 -->
+  <!-- BILLBOARD -->
   <section class="billboard" aria-labelledby="bb1">
-    <img class="bg" src="/public/billboard1.jpg" alt="Morning light and calm scene">
+    <!-- Achte auf Groß-/Kleinschreibung und Endung -->
+    <img class="bg" src="/public/Billboard1.jpeg" alt="Morning light and calm scene">
     <div class="overlay"></div>
     <div class="copy container">
       <h2 id="bb1">The voice that clears your head.</h2>
@@ -163,198 +176,172 @@ footer a{color:var(--muted);text-decoration:none}
     </div>
   </section>
 
-<!-- FEATURES / BENEFITS -->
-<section id="features" class="section container" aria-labelledby="features-h">
-  <p class="kicker" data-i18n="features.kicker">Benefits</p>
-  <h2 id="features-h" class="h2" data-i18n="features.h2">What you get with Evermind</h2>
+  <!-- FEATURES -->
+  <section id="features" class="section container" aria-labelledby="features-h">
+    <p class="kicker">Benefits</p>
+    <h2 id="features-h" class="h2">What you get with Evermind</h2>
 
-  <div class="features">
-    <article class="card">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path>
-        <path d="M14 8v7"></path><path d="M18 5v13"></path><path d="M22 10v3"></path>
-      </svg>
-      <h3 data-i18n="feat.1.title">Talk, don’t type.</h3>
-      <p data-i18n="feat.1.copy">Speak naturally — Evermind listens, responds, and helps you process what’s on your mind.</p>
-    </article>
+    <div class="features">
+      <article class="card">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path>
+          <path d="M14 8v7"></path><path d="M18 5v13"></path><path d="M22 10v3"></path>
+        </svg>
+        <h3>Talk, don’t type.</h3>
+        <p>Speak naturally—Evermind listens and responds in real-time.</p>
+      </article>
 
-    <article class="card">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4"></circle>
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-      </svg>
-      <h3 data-i18n="feat.2.title">Feel lighter in minutes.</h3>
-      <p data-i18n="feat.2.copy">Short 2–5 min micro-dialogues that bring clarity and calm, whenever you need them.</p>
-    </article>
+      <article class="card">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <h3>Feel lighter in minutes.</h3>
+        <p>Micro-sessions fit into any day—no appointments.</p>
+      </article>
 
-    <article class="card">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 22C7 20.5 4 17 4 12V6l8-4 8 4v6c0 5-3 8.5-8 10z"></path>
-        <path d="m9 12 2 2 4-4"></path>
-      </svg>
-      <h3 data-i18n="feat.4.title">Your data stays yours.</h3>
-      <p data-i18n="feat.4.copy">Fully hosted in the EU, encrypted end-to-end, never sold or shared — privacy by design.</p>
-    </article>
+      <article class="card">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+        </svg>
+        <h3>Always there, never judging.</h3>
+        <p>24/7 companion—available any time you need to talk.</p>
+      </article>
+    </div>
+  </section>
 
-    <article class="card">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>
-      </svg>
-      <h3 data-i18n="feat.5.title">Always there, never judging.</h3>
-      <p data-i18n="feat.5.copy">24/7 companion that’s available any time — no appointments, no waiting lists.</p>
-    </article>
+  <!-- HOW IT WORKS -->
+  <section class="section container" id="how" aria-labelledby="how-h">
+    <p class="kicker">How it works</p>
+    <h2 id="how-h" class="h2">Three simple steps to feel better</h2>
+    <div class="howGrid">
+      <article class="card">
+        <h3>1. Talk</h3>
+        <p>Start a short voice chat whenever you need to clear your mind.</p>
+      </article>
+      <article class="card">
+        <h3>2. Reflect</h3>
+        <p>Evermind helps you make sense of what you feel—without judgment.</p>
+      </article>
+      <article class="card">
+        <h3>3. Grow</h3>
+        <p>Build daily voice routines that strengthen your emotional resilience.</p>
+      </article>
+    </div>
+  </section>
 
-    <article class="card">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M18.5 12a3.5 3.5 0 0 1-6 2.1l-1-1.2-1 1.2A3.5 3.5 0 1 1 6 9.9l1 1.2 1-1.2A3.5 3.5 0 1 1 18.5 12z"></path>
-      </svg>
-      <h3 data-i18n="feat.6.title">Small habits, real change.</h3>
-      <p data-i18n="feat.6.copy">Daily reflections and voice-based routines that build lasting emotional resilience.</p>
-    </article>
-  </div>
-</section>
+  <!-- WAITLIST / EARLY ACCESS (inverse/negativ) -->
+  <section class="section section--inverse" id="waitlist">
+    <div class="container">
+      <div class="waitlist" aria-labelledby="wl-h">
+        <h2 id="wl-h" class="h2">Be among the first to try Evermind</h2>
+        <p class="sub">Join our early-access list and get notified when the voice companion goes live.</p>
+        <!-- TODO: Formspree Endpoint ersetzen -->
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="field">
+          <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+          <button type="submit" class="btn">Join Waitlist</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-  <!-- How it works -->
-  <section class="section container" id="how">
-  <p class="kicker">How it works</p>
-  <h2 class="h2">Three simple steps to feel better</h2>
-  <div class="features" style="grid-template-columns:repeat(3,1fr)">
-    <article class="card">
-      <h3>1. Talk</h3>
-      <p>Start a short voice chat whenever you need to clear your mind.</p>
-    </article>
-    <article class="card">
-      <h3>2. Reflect</h3>
-      <p>Evermind helps you make sense of what you feel — without judgment.</p>
-    </article>
-    <article class="card">
-      <h3>3. Grow</h3>
-      <p>Build daily voice routines that strengthen your emotional resilience.</p>
-    </article>
-  </div>
-</section>
+  <footer class="container">
+    <p>© 2025 Evermind. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Imprint</a></p>
+  </footer>
 
+  <!-- ELEVENLABS: Start/Stop + Visualizer-Zustände -->
+  <script type="module">
+    const AGENT_ID = "agent_6501k6wsvkvqf55av1b84g1ww65t";
+    const talkBtn = document.getElementById('talkBtn');
+    let convo = null, Conversation = null, running = false;
 
-<!-- WAITLIST / EARLY ACCESS -->
-<section class="section container" id="waitlist">
-  <div class="waitlist" aria-labelledby="wl-h">
-    <h2 id="wl-h" class="h2">Be among the first to try Evermind</h2>
-    <p class="sub">Join our early-access list and get notified when the voice companion goes live.</p>
-    <!-- Formspree: ersetze /f/your-form-id durch deinen echten Endpoint -->
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="field">
-      <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
-      <button type="submit" class="btn">Join Waitlist</button>
-    </form>
-  </div>
-</section>
+    const L = (k) => talkBtn?.dataset[k] || '';
 
-  <footer class="container" style="text-align:center;padding:48px 0;color:var(--muted);font-size:.9rem">
-  <p>© 2025 Evermind. All rights reserved.</p>
-  <p><a href="#" style="color:var(--muted);text-decoration:none">Privacy Policy</a> · 
-     <a href="#" style="color:var(--muted);text-decoration:none">Imprint</a></p>
-</footer>
-
-
-<!-- ELEVENLABS -->
-<script type="module">
-const AGENT_ID = "agent_6501k6wsvkvqf55av1b84g1ww65t";
-const talkBtn = document.querySelector('.actions .cta');
-let convo=null, Conversation=null;
-
-function setTalkLabel(text){
-  const label = talkBtn?.querySelector('.label');
-  if(label) label.textContent = text;
-}
-function setTalking(on){
-  if(!talkBtn) return;
-  talkBtn.classList.toggle('is-talking', !!on);
-}
-
-async function ensureSdk(){
-  if(Conversation) return Conversation;
-  const m=await import('https://cdn.jsdelivr.net/npm/@elevenlabs/client/+esm');
-  Conversation=m.Conversation; return Conversation;
-}
-async function startConversation(){
-  if(convo) return; setTalkLabel('Connecting…'); setTalking(true);
-  await navigator.mediaDevices.getUserMedia({audio:true}).catch(()=>{setTalkLabel('Let’s talk'); setTalking(false);});
-  await ensureSdk().catch(()=>{setTalkLabel('Let’s talk'); setTalking(false);});
-  convo=await Conversation.startSession({
-    agentId:AGENT_ID,
-    connectionType:'webrtc',
-    onStatusChange:(s)=>{
-      if(s==='connected'){ setTalkLabel('Talking…'); setTalking(true); }
-      if(s==='disconnected'){ endConversation(); }
-    },
-    onError:()=>endConversation()
-  }).catch(()=>{setTalkLabel('Let’s talk'); setTalking(false);});
-}
-async function endConversation(){
-  try{await convo?.endSession?.()}catch(_){}
-  try{convo?.close?.()}catch(_){}
-  convo=null; setTalkLabel('Let’s talk'); setTalking(false);
-}
-talkBtn?.addEventListener('click',e=>{e.preventDefault(); if(convo) endConversation(); else startConversation();});
-window.addEventListener('beforeunload',()=>{try{convo?.endSession?.()}catch(_){}})
-</script>
-
-<!-- I18N (wie gehabt) -->
-<script>
-const I18N = {
-  en: {
-    nav: { home:"Home", features:"Features" },
-    hero: {
-      title:"The Voice\nthat cares",
-      lead:"Evermind isn’t just another chat bot. It’s developed with clinicians and therapists and is trained on evidence-based methods, tested for real impact. Every interaction is grounded in proven psychological science."
-    },
-    cta: { talk:"Let’s talk" },
-    features: { kicker:"Benefits", h2:"What you get with Evermind" },
-    feat: {
-      1:{ title:"Talk, don’t type.", copy:"Speak naturally — Evermind listens, responds, and helps you process what’s on your mind."},
-      2:{ title:"Feel lighter in minutes.", copy:"Short 2–5 min micro-dialogues that bring clarity and calm, whenever you need them."},
-      4:{ title:"Your data stays yours.", copy:"Fully hosted in the EU, encrypted end-to-end, never sold or shared — privacy by design."},
-      5:{ title:"Always there, never judging.", copy:"24/7 companion that’s available any time — no appointments, no waiting lists."},
-      6:{ title:"Small habits, real change.", copy:"Daily reflections and voice-based routines that build lasting emotional resilience."}
+    function setLabel(txt){
+      const lab = talkBtn?.querySelector('.label');
+      if(lab) lab.textContent = txt;
     }
-  },
-  de: {
-    nav: { home:"Start", features:"Features" },
-    hero: {
-      title:"Die Stimme,\ndie versteht",
-      lead:"Evermind ist keine weitere Chat-App. Entwickelt mit Kliniker:innen und auf evidenzbasierten Methoden trainiert – für echte Wirkung im Alltag. Jede Interaktion basiert auf psychologischer Wissenschaft."
-    },
-    cta: { talk:"Lass uns sprechen" },
-    features: { kicker:"Vorteile", h2:"Das bekommst du mit Evermind" },
-    feat: {
-      1:{ title:"Sprechen statt tippen.", copy:"Sag einfach, was los ist – Evermind hört zu, reagiert und hilft dir, Gedanken zu sortieren."},
-      2:{ title:"Leichter fühlen – in Minuten.", copy:"Kurze 2–5-Min-Dialoge bringen Klarheit und Ruhe – genau dann, wenn du’s brauchst."},
-      4:{ title:"Deine Daten gehören dir.", copy:"Komplett in der EU gehostet, Ende-zu-Ende verschlüsselt, niemals verkauft – Privacy by Design."},
-      5:{ title:"Immer da. Nie wertend.", copy:"24/7 Begleiter – ohne Termine oder Wartelisten."},
-      6:{ title:"Kleine Schritte, echte Wirkung.", copy:"Tägliche Reflexionen & Sprach-Routinen für nachhaltige Resilienz."}
+    function setIdle(on){
+      talkBtn.classList.toggle('is-idle', !!on);
+      if(on) talkBtn.classList.remove('is-talking');
+      talkBtn.setAttribute('aria-pressed', on ? 'false' : 'true');
     }
-  }
-};
-
-function t(lang, key){ return key.split('.').reduce((o,k)=>o && o[k], I18N[lang]) ?? ''; }
-function applyI18n(lang){
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    const val = t(lang, key);
-    if(val !== ''){
-      if(/\n/.test(val)){ el.innerHTML = val.replace(/\n/g,'<br>'); }
-      else { el.textContent = val; }
+    function setTalking(on){
+      talkBtn.classList.toggle('is-talking', !!on);
+      if(on) talkBtn.classList.remove('is-idle');
+      talkBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      running = !!on;
     }
-  });
-  document.querySelectorAll('.langBtn').forEach(b=>b.classList.toggle('is-active', b.dataset.lang===lang));
-  localStorage.setItem('lang', lang);
-  document.documentElement.lang = lang;
-}
 
-const stored = localStorage.getItem('lang');
-const browser = (navigator.language||'en').slice(0,2).toLowerCase();
-const startLang = stored || (browser==='de'?'de':'en');
-applyI18n(startLang);
-document.querySelectorAll('.langBtn').forEach(btn=>btn.addEventListener('click', ()=>applyI18n(btn.dataset.lang)));
-</script>
+    async function ensureSdk(){
+      if(Conversation) return Conversation;
+      const m = await import('https://cdn.jsdelivr.net/npm/@elevenlabs/client/+esm');
+      Conversation = m.Conversation;
+      return Conversation;
+    }
+
+    async function startConversation(){
+      if(running) return;
+      setLabel(L('labelConnecting') || 'Connecting…');
+      setIdle(false);
+
+      try { await navigator.mediaDevices.getUserMedia({ audio:true }); }
+      catch(e){ setLabel(L('labelStart') || 'Let’s talk'); setIdle(true); return; }
+
+      try { await ensureSdk(); }
+      catch(e){ setLabel(L('labelStart') || 'Let’s talk'); setIdle(true); return; }
+
+      try{
+        convo = await Conversation.startSession({
+          agentId: AGENT_ID,
+          connectionType: 'webrtc',
+          onStatusChange: (s)=>{
+            if(s === 'connected'){ setLabel(L('labelTalking') || 'Talking…'); setTalking(true); }
+            if(s === 'disconnected'){ endConversation(); }
+          },
+          onError: ()=> endConversation()
+        });
+      }catch(e){
+        setLabel(L('labelStart') || 'Let’s talk');
+        setIdle(true);
+      }
+    }
+
+    async function endConversation(){
+      try{ await convo?.endSession?.(); }catch(_){}
+      try{ convo?.close?.(); }catch(_){}
+      convo = null;
+      setTalking(false);
+      setLabel(L('labelStart') || 'Let’s talk');
+      setIdle(true);
+    }
+
+    talkBtn?.addEventListener('click', (e)=>{
+      e.preventDefault();
+      if(running){ endConversation(); }
+      else { startConversation(); }
+    });
+
+    window.addEventListener('beforeunload', ()=>{ try{ convo?.endSession?.(); }catch(_){} });
+
+    // Initial
+    setIdle(true);
+  </script>
+
+  <!-- (Optional) Mini Language Toggle – nur optisch -->
+  <script>
+    function applyLang(lang){
+      document.querySelectorAll('.langBtn').forEach(b=>b.classList.toggle('is-active', b.dataset.lang===lang));
+      document.documentElement.lang = lang;
+    }
+    document.querySelectorAll('.langBtn').forEach(btn=>{
+      btn.addEventListener('click', ()=>applyLang(btn.dataset.lang));
+    });
+    applyLang('en');
+  </script>
 </body>
 </html>
