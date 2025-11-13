@@ -13,8 +13,10 @@
   img{max-width:100%;display:block}
   a{text-decoration:none}
 
+  /* LAYOUT */
   .container{max-width:var(--maxw);margin:0 auto;padding:clamp(16px,4vw,28px)}
 
+  /* NAV */
   .nav{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:24px;}
   .brand{display:flex;align-items:center;gap:10px}
   .logo{width: clamp(80px, 10vw, 150px);height:auto;display:inline-block;vertical-align:middle;transition: transform .2s ease;}
@@ -24,6 +26,7 @@
   .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;
     padding:.9rem 1.2rem;border-radius:999px;font-weight:600;box-shadow:0 2px 0 #0c1c20}
 
+  /* Language switch */
   .langSwitch{display:inline-flex;gap:6px;align-items:center;margin-right:6px}
   .langBtn{font:inherit;padding:.4rem .7rem;border:1px solid var(--line);background:#fff;border-radius:999px;cursor:pointer;opacity:.9}
   .langBtn.is-active{border-color:var(--brand);box-shadow:0 1px 0 #dcd3ca;opacity:1;font-weight:700}
@@ -31,24 +34,31 @@
   @media (max-width: 820px){ .navLinks{gap:20px} .btn{padding:.8rem 1.1rem} }
   @media (max-width: 640px){ .container{padding:16px} .logo{ width: clamp(72px, 22vw, 110px) } .navLinks{gap:16px} }
 
+  /* HERO */
   .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;margin-top:clamp(10px,2vw,20px)}
   @media (max-width:1024px){.hero{grid-template-columns:1fr}}
   .copy{padding-right:clamp(0px,6vw,40px)}
   h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
   .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
 
+  /* CTA */
   .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
   .cta{display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;border-radius:999px;
     border:1px solid #cfc7bf;background:#fff;box-shadow:0 2px 0 #d6cdc4;color:var(--ink);font-weight:600}
-  .cta .circle{width:36px;height:36px;border-radius:999px;background:var(--brand);display:grid;place-items:center;transition:background .2s ease, box-shadow .2s ease}
+  .cta .circle{
+    width:36px;height:36px;border-radius:999px;
+    background:var(--brand);display:grid;place-items:center;
+    transition:background .2s ease, box-shadow .2s ease
+  }
   .cta .circle svg{width:18px;height:18px;fill:#fff}
 
-  /* Icon rot, wenn Call läuft */
+  /* Icon rot + „Stop“ im Call-State */
   .cta.is-talking .circle{
     background:#e53935;
     box-shadow:0 0 0 2px rgba(229,57,53,.25);
   }
 
+  /* Voice Wave */
   .viz{display:inline-grid;grid-auto-flow:column;gap:6px;align-items:end;height:18px;margin-left:8px}
   .viz .bar{width:3px;height:6px;border-radius:999px;background:currentColor;opacity:.95}
   @keyframes beat{0%,100%{height:6px}50%{height:18px}}
@@ -61,13 +71,16 @@
   .cta.is-talking .viz .bar:nth-child(5){animation-delay:.32s}
   .cta.is-talking .viz .bar:nth-child(6){animation-delay:.40s}
 
+  /* Store badges */
   .badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
   .badges img{height:44px}
 
+  /* HERO image */
   .heroImg{position:relative;margin:0!important;border:none!important;border-radius:0!important;background:none!important;
     box-shadow:none!important;overflow:hidden!important;width:100%!important;min-height:clamp(360px,60vh,720px)!important}
   .heroImg img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:0!important}
 
+  /* BILLBOARD */
   .billboard{position:relative;margin:0;padding:0;width:100%;overflow:hidden;border-radius:0}
   .billboard .bg{width:100%;height:min(65vh,620px);object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
   .billboard .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(246,239,231,0), rgba(246,239,231,.85))}
@@ -75,10 +88,12 @@
   .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;margin:0 0 8px}
   .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
 
+  /* SECTIONS */
   .section{padding:clamp(28px,6vw,56px) 0}
   .kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-size:.9rem;margin:0 0 6px}
   .h2{font-size:clamp(28px,4.6vw,44px);line-height:1.1;margin:0 0 10px}
   .sub{color:var(--muted);max-width:70ch;margin:0 0 24px}
+
   .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
   @media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
   @media (max-width:640px){.features{grid-template-columns:1fr}}
@@ -89,6 +104,7 @@
   .howGrid{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
   @media (max-width:900px){.howGrid{grid-template-columns:1fr}}
 
+  /* INVERSE WAITLIST */
   .section--inverse{background:var(--ink);color:#fff;border-top:1px solid #0e1214;border-bottom:1px solid #0e1214}
   .section--inverse .waitlist{background:transparent;border:1px solid rgba(255,255,255,.15);box-shadow:none;border-radius:20px;padding:48px 24px;text-align:center}
   .section--inverse .h2,.section--inverse .sub{color:#fff}
@@ -223,28 +239,26 @@
     if(lab) lab.textContent = txt;
   }
 
-  function setIdle(on){
-    talkBtn.classList.toggle('is-idle', !!on);
-    if(on){
-      talkBtn.classList.remove('is-talking');
-      talkBtn.setAttribute('aria-pressed', 'false');
-      running = false;
-      setLabel(L('labelStart','Let’s talk'));
-    }
+  function setIdle(){
+    talkBtn.classList.add('is-idle');
+    talkBtn.classList.remove('is-talking');
+    talkBtn.setAttribute('aria-pressed','false');
+    running = false;
+    setLabel(L('labelStart','Let’s talk'));
   }
 
-  function setTalking(on){
-    talkBtn.classList.toggle('is-talking', !!on);
-    if(on){
-      talkBtn.classList.remove('is-idle');
-      talkBtn.setAttribute('aria-pressed', 'true');
-      running = true;
-      // Wenn Call läuft: Button-Text = "Stop"
-      setLabel(L('labelStop','Stop'));
-    } else {
-      talkBtn.setAttribute('aria-pressed','false');
-      running = false;
-    }
+  function setTalkingStateConnecting(){
+    talkBtn.classList.remove('is-idle');
+    talkBtn.classList.add('is-talking');
+    talkBtn.setAttribute('aria-pressed','true');
+    setLabel(L('labelConnecting','Connecting…'));
+  }
+
+  function setTalkingStateActive(){
+    talkBtn.classList.remove('is-idle');
+    talkBtn.classList.add('is-talking');
+    talkBtn.setAttribute('aria-pressed','true');
+    setLabel(L('labelStop','Stop'));
   }
 
   async function ensureSdk(){
@@ -257,22 +271,24 @@
   async function startConversation(){
     if(running) return;
     console.log('[EL] startConversation');
-    setIdle(false);
-    setLabel(L('labelConnecting','Connecting…'));
+    running = true;
+    setTalkingStateConnecting();
 
     try {
       micStream = await navigator.mediaDevices.getUserMedia({ audio:true });
       console.log('[EL] mic acquired');
     } catch(e){
       console.warn('[EL] mic error', e);
-      setIdle(true);
+      running = false;
+      setIdle();
       return;
     }
 
     try { await ensureSdk(); }
     catch(e){
       console.warn('[EL] SDK load error', e);
-      setIdle(true);
+      running = false;
+      setIdle();
       stopMic();
       return;
     }
@@ -284,7 +300,7 @@
         onStatusChange: (s)=>{
           console.log('[EL] status:', s);
           if(s === 'connected'){
-            setTalking(true);
+            setTalkingStateActive();
           }
           if(s === 'disconnected'){
             endConversation({remote:true});
@@ -298,7 +314,8 @@
       console.log('[EL] session started', convo);
     }catch(e){
       console.warn('[EL] startSession error', e);
-      setIdle(true);
+      running = false;
+      setIdle();
       stopMic();
     }
   }
@@ -339,6 +356,7 @@
   }
 
   async function endConversation(opts={}){
+    if(!running && !convo) return;
     if(isEnding) return;
     isEnding = true;
     console.log('[EL] endConversation', opts);
@@ -350,8 +368,8 @@
     stopMic();
 
     convo = null;
-    setTalking(false);
-    setIdle(true);
+    running = false;
+    setIdle();
 
     setTimeout(()=>{
       const anyPlaying = Array.from(document.querySelectorAll('audio'))
@@ -363,13 +381,13 @@
         stopMic();
       }
       isEnding = false;
-    }, 800);
+    }, 600);
   }
 
   talkBtn?.addEventListener('click', (e)=>{
     e.preventDefault();
-    if(running){
-      // Im Running-State: Button-Text ist "Stop" und beendet Call
+    if(running || convo){
+      // egal ob "Connecting…" oder schon verbunden: Klick = Stop
       endConversation({manual:true});
     } else {
       startConversation();
@@ -377,16 +395,17 @@
   });
 
   window.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && running) endConversation({escape:true});
+    if(e.key === 'Escape' && (running || convo)) endConversation({escape:true});
   });
 
   window.addEventListener('beforeunload', ()=>{
     try{ endConversation({unload:true}); }catch(_){}
   });
 
-  setIdle(true);
+  setIdle();
 </script>
 
+<!-- super-minimale Language-Logik -->
 <script>
   function applyLang(lang){
     document.querySelectorAll('.langBtn').forEach(b=>b.classList.toggle('is-active', b.dataset.lang===lang));
