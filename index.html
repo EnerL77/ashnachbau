@@ -6,10 +6,22 @@
 <title>EVERMYND — MVP</title>
 <meta name="description" content="EVERMYND is developed with doctors and therapists and is grounded in psychological science." />
 <style>
-  :root{ --bg:#f6efe7; --ink:#171a1c; --muted:#4d5559; --brand:#1d3b44; --line:#e6ded6; --radius:20px; --maxw:1200px; }
+  :root{
+    --bg:#f6efe7;
+    --ink:#171a1c;
+    --muted:#4d5559;
+    --brand:#1d3b44;
+    --line:#e6ded6;
+    --radius:20px;
+    --maxw:1200px;
+  }
   *{box-sizing:border-box}
-  html,body{ margin:0; background:var(--bg); color:var(--ink);
-    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial }
+  html,body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+  }
   img{max-width:100%;display:block}
   a{text-decoration:none}
 
@@ -40,17 +52,6 @@
   .copy{padding-right:clamp(0px,6vw,40px)}
   h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
   .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
-
-  </section>  <!-- Ende Hero -->
-
-<!-- NEGATIV BLOCK -->
-<section class="section section--negative factblock">
-  <div class="container">
-    <h2>1 von 4 Menschen kämpft mit mentaler Belastung.</h2>
-    <p>Niemand sollte damit allein bleiben — und genau hier setzt EVERMYND an.</p>
-  </div>
-</section>
-
 
   /* CTA */
   .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
@@ -94,22 +95,13 @@
   /* BILLBOARD */
   .billboard{position:relative;margin:0;padding:0;width:100%;overflow:hidden;border-radius:0}
   .billboard .bg{width:100%;height:min(65vh,620px);object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
-  .billboard .overlay{
-    background: none;
-  }
+  .billboard .overlay{background:none;}
   .billboard .copy{position:absolute;inset:0;display:grid;align-content:end;padding:clamp(18px,5vw,44px)}
   .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;margin:0 0 8px}
   .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
-
-  /* Text im Billboard weiß + zentriert */
-  .billboard .copy{
-    text-align: center;
-    justify-items: center;
-  }
+  .billboard .copy{text-align:center;justify-items:center;}
   .billboard h2,
-  .billboard p{
-    color: #fff;
-  }
+  .billboard p{color:#fff;}
 
   /* SECTIONS */
   .section{padding:clamp(28px,6vw,56px) 0}
@@ -126,24 +118,17 @@
     justify-items:center;
     text-align:center;
   }
-
   @media (max-width:900px){
-    .features{
-      grid-template-columns:repeat(2, minmax(0,260px));
-    }
+    .features{grid-template-columns:repeat(2, minmax(0,260px));}
   }
   @media (max-width:640px){
-    .features{
-      grid-template-columns:1fr;
-    }
+    .features{grid-template-columns:1fr;}
   }
-  @media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
-  @media (max-width:640px){.features{grid-template-columns:1fr}}
   .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 0 #e8e1d9}
   .card h3{margin:10px 0 6px;font-size:1.1rem}
   .card p{margin:0;color:var(--muted)}
 
-  /* Alte howGrid-Styles bleiben, werden aber nicht mehr genutzt */
+  /* (Alt) howGrid – wird nicht mehr genutzt */
   .howGrid{
     display:grid;
     gap:22px;
@@ -152,44 +137,21 @@
     justify-items:center;
     text-align:center;
   }
-
   @media (max-width:900px){
-    .howGrid{
-      grid-template-columns:repeat(2, minmax(0,260px));
-    }
+    .howGrid{grid-template-columns:repeat(2, minmax(0,260px));}
   }
   @media (max-width:640px){
-    .howGrid{
-      grid-template-columns:1fr;
-    }
+    .howGrid{grid-template-columns:1fr;}
   }
   #how .kicker,
-  #how .h2 {
-    text-align:center;
-  }
-
-  @media (max-width:900px){.howGrid{grid-template-columns:1fr}}
+  #how .h2{text-align:center;}
 
   /* NEW: HOW IT WORKS – iOS Style Cards */
-  .howSection{
-    background:#f3ebe1;
-  }
-  .howInner{
-    max-width:900px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .howInner .kicker{
-    margin-bottom:4px;
-  }
-  .howInner .h2{
-    margin-bottom:24px;
-  }
-  .stepGrid{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-  }
+  .howSection{background:#f3ebe1;}
+  .howInner{max-width:900px;margin:0 auto;text-align:center;}
+  .howInner .kicker{margin-bottom:4px;}
+  .howInner .h2{margin-bottom:24px;}
+  .stepGrid{display:flex;flex-direction:column;gap:18px;}
   .stepCard{
     background:#fff;
     border-radius:999px;
@@ -201,26 +163,14 @@
     gap:16px;
   }
   .stepNumber{
-    width:34px;
-    height:34px;
-    border-radius:999px;
+    width:34px;height:34px;border-radius:999px;
     background:rgba(29,59,68,.06);
-    color:var(--brand);
-    font-weight:700;
-    font-size:.95rem;
-    display:grid;
-    place-items:center;
-    flex-shrink:0;
+    color:var(--brand);font-weight:700;font-size:.95rem;
+    display:grid;place-items:center;flex-shrink:0;
   }
-  .stepText h3{
-    margin:0 0 4px;
-    font-size:1.1rem;
-  }
-  .stepText p{
-    margin:0;
-    color:var(--muted);
-    font-size:.98rem;
-  }
+  .stepText h3{margin:0 0 4px;font-size:1.1rem;}
+  .stepText p{margin:0;color:var(--muted);font-size:.98rem;}
+
   @media (min-width:900px){
     .stepGrid{
       display:grid;
@@ -234,58 +184,69 @@
       border-radius:24px;
       padding:20px 22px 22px;
     }
-    .stepNumber{
-      margin-bottom:6px;
-    }
+    .stepNumber{margin-bottom:6px;}
   }
 
   /* INVERSE WAITLIST */
-  .section--inverse{background:var(--ink);color:#fff;border-top:1px solid #0e1214;border-bottom:1px solid #0e1214}
-  /* INVERSE WAITLIST */
-.section--inverse{
-  background:var(--ink);
-  color:#fff;
-  border-top:1px solid #0e1214;
-  border-bottom:1px solid #0e1214;
-  display:flex;              /* NEU: macht die Section zum Flex-Container */
-}
-
-/* NEU: zentriert den Inhalt (die .container-Box) in der Section */
-.section--inverse > .container{
-  margin:auto;
-}
-  .section--inverse .waitlist{background:transparent;border:1px solid rgba(255,255,255,.15);box-shadow:none;border-radius:20px;padding:48px 24px;text-align:center}
-  .section--inverse .h2,.section--inverse .sub{color:#fff}
+  .section--inverse{
+    background:var(--ink);
+    color:#fff;
+    border-top:1px solid #0e1214;
+    border-bottom:1px solid #0e1214;
+    display:flex;
+  }
+  .section--inverse > .container{margin:auto;}
+  .section--inverse .waitlist{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:none;
+    border-radius:20px;
+    padding:48px 24px;
+    text-align:center;
+  }
+  .section--inverse .h2,
+  .section--inverse .sub{color:#fff}
   .section--inverse .sub{opacity:.85}
   .section--inverse .field{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px}
-  .section--inverse .field input[type="email"]{padding:14px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;min-width:280px;font-size:1rem;background:transparent;color:#fff}
+  .section--inverse .field input[type="email"]{
+    padding:14px 18px;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:999px;
+    min-width:280px;
+    font-size:1rem;
+    background:transparent;
+    color:#fff;
+  }
   .section--inverse .field input[type="email"]::placeholder{color:rgba(255,255,255,.6)}
-  .section--inverse .btn{background:#fff;color:var(--ink);box-shadow:0 2px 0 #d6cdc4;border:1px solid #cfc7bf}
+  .section--inverse .btn{
+    background:#fff;
+    color:var(--ink);
+    box-shadow:0 2px 0 #d6cdc4;
+    border:1px solid #cfc7bf;
+  }
 
-  .section--negative {
-  background:#171a1c;
-  color:#fff;
-  padding:clamp(48px,8vw,96px) 0;
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,0.05);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.section--negative h2 {
-  font-size:clamp(28px,4.8vw,48px);
-  line-height:1.15;
-  margin:0 0 16px;
-  letter-spacing:-0.01em;
-  font-weight:700;
-}
-
-.section--negative p {
-  font-size:clamp(16px,2.2vw,20px);
-  opacity:.85;
-  max-width:60ch;
-  margin:0 auto;
-}
-
+  /* NEGATIVE FACT BLOCK */
+  .section--negative{
+    background:#171a1c;
+    color:#fff;
+    padding:clamp(48px,8vw,96px) 0;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+  }
+  .section--negative h2{
+    font-size:clamp(28px,4.8vw,48px);
+    line-height:1.15;
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+    font-weight:700;
+  }
+  .section--negative p{
+    font-size:clamp(16px,2.2vw,20px);
+    opacity:.85;
+    max-width:60ch;
+    margin:0 auto;
+  }
 
   footer{color:var(--muted);text-align:center;padding:48px 0}
 </style>
@@ -356,6 +317,22 @@
     </figure>
   </section>
 </main>
+
+<!-- NEGATIVE FACT BLOCK: direkt nach dem Hero -->
+<section class="section section--negative">
+  <div class="container">
+    <h2
+      data-en="1 in 4 people worldwide struggle with their mental health."
+      data-de="1 von 4 Menschen weltweit kämpft mit mentalen Belastungen.">
+      1 in 4 people worldwide struggle with their mental health.
+    </h2>
+    <p
+      data-en="No one should have to navigate that alone — EVERMYND is built for the space between therapy sessions, waiting lists and late-night overthinking."
+      data-de="Niemand sollte damit allein sein – EVERMYND ist für die Zwischenräume gebaut: zwischen Therapiesitzungen, Wartelisten und späten Grübel-Nächten.">
+      No one should have to navigate that alone — EVERMYND is built for the space between therapy sessions, waiting lists and late-night overthinking.
+    </p>
+  </div>
+</section>
 
 <!-- 6 Feature-Cards -->
 <div id="features" class="features">
@@ -492,7 +469,6 @@
     </h2>
 
     <div class="stepGrid">
-
       <article class="stepCard">
         <div class="stepNumber">1</div>
         <div class="stepText">
@@ -525,7 +501,6 @@
           </p>
         </div>
       </article>
-
     </div>
   </div>
 </section>
