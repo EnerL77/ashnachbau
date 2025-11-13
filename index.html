@@ -87,6 +87,17 @@
   .billboard .copy{position:absolute;inset:0;display:grid;align-content:end;padding:clamp(18px,5vw,44px)}
   .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;margin:0 0 8px}
   .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
+  /* Text im Billboard weiß + zentriert */
+.billboard .copy{
+  text-align: center;      /* horizontal zentrieren */
+  justify-items: center;   /* für das Grid zentriert */
+}
+
+.billboard h2,
+.billboard p{
+  color: #fff;             /* weiße Schrift */
+}
+
 
   /* SECTIONS */
   .section{padding:clamp(28px,6vw,56px) 0}
