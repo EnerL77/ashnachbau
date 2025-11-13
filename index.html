@@ -13,10 +13,8 @@
   img{max-width:100%;display:block}
   a{text-decoration:none}
 
-  /* LAYOUT */
   .container{max-width:var(--maxw);margin:0 auto;padding:clamp(16px,4vw,28px)}
 
-  /* NAV */
   .nav{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:24px;}
   .brand{display:flex;align-items:center;gap:10px}
   .logo{width: clamp(80px, 10vw, 150px);height:auto;display:inline-block;vertical-align:middle;transition: transform .2s ease;}
@@ -26,7 +24,6 @@
   .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;
     padding:.9rem 1.2rem;border-radius:999px;font-weight:600;box-shadow:0 2px 0 #0c1c20}
 
-  /* Language switch */
   .langSwitch{display:inline-flex;gap:6px;align-items:center;margin-right:6px}
   .langBtn{font:inherit;padding:.4rem .7rem;border:1px solid var(--line);background:#fff;border-radius:999px;cursor:pointer;opacity:.9}
   .langBtn.is-active{border-color:var(--brand);box-shadow:0 1px 0 #dcd3ca;opacity:1;font-weight:700}
@@ -34,21 +31,18 @@
   @media (max-width: 820px){ .navLinks{gap:20px} .btn{padding:.8rem 1.1rem} }
   @media (max-width: 640px){ .container{padding:16px} .logo{ width: clamp(72px, 22vw, 110px) } .navLinks{gap:16px} }
 
-  /* HERO */
   .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;margin-top:clamp(10px,2vw,20px)}
   @media (max-width:1024px){.hero{grid-template-columns:1fr}}
   .copy{padding-right:clamp(0px,6vw,40px)}
   h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
   .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
 
-  /* CTA */
   .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
   .cta{display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;border-radius:999px;
     border:1px solid #cfc7bf;background:#fff;box-shadow:0 2px 0 #d6cdc4;color:var(--ink);font-weight:600}
   .cta .circle{width:36px;height:36px;border-radius:999px;background:var(--brand);display:grid;place-items:center}
   .cta .circle svg{width:18px;height:18px;fill:#fff}
 
-  /* Voice visualizer (idle/talking) */
   .viz{display:inline-grid;grid-auto-flow:column;gap:6px;align-items:end;height:18px;margin-left:8px}
   .viz .bar{width:3px;height:6px;border-radius:999px;background:currentColor;opacity:.95}
   @keyframes beat{0%,100%{height:6px}50%{height:18px}}
@@ -61,16 +55,13 @@
   .cta.is-talking .viz .bar:nth-child(5){animation-delay:.32s}
   .cta.is-talking .viz .bar:nth-child(6){animation-delay:.40s}
 
-  /* Badges */
   .badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
   .badges img{height:44px}
 
-  /* HERO image */
   .heroImg{position:relative;margin:0!important;border:none!important;border-radius:0!important;background:none!important;
     box-shadow:none!important;overflow:hidden!important;width:100%!important;min-height:clamp(360px,60vh,720px)!important}
   .heroImg img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:0!important}
 
-  /* BILLBOARD */
   .billboard{position:relative;margin:0;padding:0;width:100%;overflow:hidden;border-radius:0}
   .billboard .bg{width:100%;height:min(65vh,620px);object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
   .billboard .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(246,239,231,0), rgba(246,239,231,.85))}
@@ -78,7 +69,6 @@
   .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;margin:0 0 8px}
   .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
 
-  /* FEATURES */
   .section{padding:clamp(28px,6vw,56px) 0}
   .kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-size:.9rem;margin:0 0 6px}
   .h2{font-size:clamp(28px,4.6vw,44px);line-height:1.1;margin:0 0 10px}
@@ -90,11 +80,9 @@
   .card h3{margin:10px 0 6px;font-size:1.1rem}
   .card p{margin:0;color:var(--muted)}
 
-  /* HOW */
   .howGrid{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
   @media (max-width:900px){.howGrid{grid-template-columns:1fr}}
 
-  /* WAITLIST inverse */
   .section--inverse{background:var(--ink);color:#fff;border-top:1px solid #0e1214;border-bottom:1px solid #0e1214}
   .section--inverse .waitlist{background:transparent;border:1px solid rgba(255,255,255,.15);box-shadow:none;border-radius:20px;padding:48px 24px;text-align:center}
   .section--inverse .h2,.section--inverse .sub{color:#fff}
@@ -130,7 +118,6 @@
         Evermind isn’t just another chat bot. It’s developed with clinicians and therapists and is trained on evidence-based methods, tested for real impact.
       </p>
       <div class="actions">
-        <!-- TALK BUTTON with visualizer -->
         <a class="cta is-idle" id="talkBtn" href="#" aria-label="Let's talk" aria-pressed="false"
            data-label-start="Let’s talk" data-label-connecting="Connecting…" data-label-talking="Talking…" data-label-stop="End call">
           <span class="label">Let’s talk</span>
@@ -154,7 +141,6 @@
   </section>
 </main>
 
-<!-- BILLBOARD -->
 <section class="billboard" aria-labelledby="bb1">
   <img class="bg" src="/public/billboard1.jpg" alt="Morning light and calm scene">
   <div class="overlay"></div>
@@ -164,7 +150,6 @@
   </div>
 </section>
 
-<!-- FEATURES -->
 <section id="features" class="section container" aria-labelledby="features-h">
   <p class="kicker">Benefits</p>
   <h2 id="features-h" class="h2">What you get with Evermind</h2>
@@ -175,7 +160,6 @@
   </div>
 </section>
 
-<!-- HOW -->
 <section class="section container" id="how" aria-labelledby="how-h">
   <p class="kicker">How it works</p>
   <h2 id="how-h" class="h2">Three simple steps to feel better</h2>
@@ -186,13 +170,11 @@
   </div>
 </section>
 
-<!-- WAITLIST (inverse) -->
 <section class="section section--inverse" id="waitlist">
   <div class="container">
     <div class="waitlist" aria-labelledby="wl-h">
       <h2 id="wl-h" class="h2">Be among the first to try Evermind</h2>
       <p class="sub">Join our early-access list and get notified when the voice companion goes live.</p>
-      <!-- TODO: replace with your Formspree endpoint -->
       <form action="https://formspree.io/f/your-form-id" method="POST" class="field">
         <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
         <button type="submit" class="btn">Join Waitlist</button>
@@ -206,7 +188,7 @@
   <p><a href="#">Privacy Policy</a> · <a href="#">Imprint</a></p>
 </footer>
 
-<!-- ELEVENLABS: robust Start/Stop with mic cleanup -->
+<!-- ELEVENLABS: robust Start/Stop + Hard-stop fallback -->
 <script type="module">
   const AGENT_ID = "agent_6501k6wsvkvqf55av1b84g1ww65t";
   const talkBtn = document.getElementById('talkBtn');
@@ -245,13 +227,15 @@
 
   async function startConversation(){
     if(running) return;
+    console.log('[EL] startConversation');
     setLabel(L('labelConnecting','Connecting…'));
     setIdle(false);
 
-    // Request mic and keep reference to close it on stop
     try {
       micStream = await navigator.mediaDevices.getUserMedia({ audio:true });
+      console.log('[EL] mic acquired');
     } catch(e){
+      console.warn('[EL] mic error', e);
       setLabel(L('labelStart','Let’s talk'));
       setIdle(true);
       return;
@@ -259,6 +243,7 @@
 
     try { await ensureSdk(); }
     catch(e){
+      console.warn('[EL] SDK load error', e);
       setLabel(L('labelStart','Let’s talk'));
       setIdle(true);
       stopMic();
@@ -270,12 +255,18 @@
         agentId: AGENT_ID,
         connectionType: 'webrtc',
         onStatusChange: (s)=>{
+          console.log('[EL] status:', s);
           if(s === 'connected'){ setTalking(true); }
           if(s === 'disconnected'){ endConversation({remote:true}); }
         },
-        onError: ()=> endConversation({error:true})
+        onError: (err)=> {
+          console.warn('[EL] onError', err);
+          endConversation({error:true});
+        }
       });
+      console.log('[EL] session started', convo);
     }catch(e){
+      console.warn('[EL] startSession error', e);
       setLabel(L('labelStart','Let’s talk'));
       setIdle(true);
       stopMic();
@@ -287,42 +278,90 @@
     micStream = null;
   }
 
+  function stopPeerConnections(){
+    // Heuristisch: häufig halten SDK-Objekte Referenzen
+    try{
+      if(convo?.pc?.getSenders){ convo.pc.getSenders().forEach(s=>{ try{s.track?.stop();}catch(_){}}); }
+      if(convo?.pc?.getReceivers){ convo.pc.getReceivers().forEach(r=>{ try{r.track?.stop();}catch(_){}}); }
+      if(convo?.pc?.close){ convo.pc.close(); }
+    }catch(_){}
+  }
+
+  function stopAudioTags(){
+    // Falls SDK Audio-Elemente erzeugt
+    try{
+      document.querySelectorAll('audio').forEach(a=>{
+        try{ a.pause(); a.srcObject = null; a.removeAttribute('src'); }catch(_){}
+      });
+    }catch(_){}
+  }
+
+  async function tryEndAll(){
+    // Wir probieren alle bekannten Varianten, ohne Annahmen über das SDK
+    const calls = [
+      async()=>await convo?.endSession?.(),
+      async()=>await Conversation?.endSession?.(convo?.sessionId),
+      async()=>await convo?.disconnect?.(),
+      async()=>await convo?.close?.(),
+      async()=>await convo?.stop?.(),
+      async()=>await convo?.end?.(),
+    ];
+    for(const fn of calls){
+      try{ await fn?.(); }catch(_){}
+    }
+  }
+
   async function endConversation(opts={}){
     if(isEnding) return;
     isEnding = true;
-    try{ await convo?.endSession?.(); }catch(_){}
-    try{ convo?.close?.(); }catch(_){}
-    try{ convo?.disconnect?.(); }catch(_){}
-    convo = null;
+    console.log('[EL] endConversation', opts);
+
+    try{ await tryEndAll(); }catch(_){}
+
+    stopPeerConnections();
+    stopAudioTags();
     stopMic();
+
+    convo = null;
     setTalking(false);
     setLabel(L('labelStart','Let’s talk'));
     setIdle(true);
     running = false;
+
+    // Hard-stop Fallback: falls nach 1s weiterhin Audio zu hören ist
+    setTimeout(()=>{
+      // Wenn irgendein Audiotrack noch läuft, hart anhalten:
+      const anyPlaying = Array.from(document.querySelectorAll('audio'))
+        .some(a=>!a.paused && !a.ended);
+      if(anyPlaying){
+        console.warn('[EL] hard-stop fallback');
+        stopAudioTags();
+        stopPeerConnections();
+        stopMic();
+      }
+      isEnding = false;
+    }, 1000);
     isEnding = false;
   }
 
-  // Toggle on click
   talkBtn?.addEventListener('click', (e)=>{
     e.preventDefault();
-    if(running) endConversation();
+    if(running) endConversation({manual:true});
     else startConversation();
   });
 
-  // ESC to end
   window.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && running) endConversation();
+    if(e.key === 'Escape' && running) endConversation({escape:true});
   });
 
-  // Safety: end on page leave
-  window.addEventListener('beforeunload', ()=>{ try{ convo?.endSession?.(); }catch(_){} stopMic(); });
+  window.addEventListener('beforeunload', ()=>{
+    try{ endConversation({unload:true}); }catch(_){}
+  });
 
-  // Init
   setIdle(true);
   setLabel(L('labelStart','Let’s talk'));
 </script>
 
-<!-- Minimal language toggle (optional visual only) -->
 <script>
   function applyLang(lang){
     document.querySelectorAll('.langBtn').forEach(b=>b.classList.toggle('is-active', b.dataset.lang===lang));
