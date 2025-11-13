@@ -83,7 +83,9 @@
   /* BILLBOARD */
   .billboard{position:relative;margin:0;padding:0;width:100%;overflow:hidden;border-radius:0}
   .billboard .bg{width:100%;height:min(65vh,620px);object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
-  .billboard .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(246,239,231,0), rgba(246,239,231,.85))}
+.billboard .overlay{
+  background: none;
+}
   .billboard .copy{position:absolute;inset:0;display:grid;align-content:end;padding:clamp(18px,5vw,44px)}
   .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;margin:0 0 8px}
   .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
