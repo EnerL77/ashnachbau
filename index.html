@@ -230,6 +230,19 @@
 
   /* INVERSE WAITLIST */
   .section--inverse{background:var(--ink);color:#fff;border-top:1px solid #0e1214;border-bottom:1px solid #0e1214}
+  /* INVERSE WAITLIST */
+.section--inverse{
+  background:var(--ink);
+  color:#fff;
+  border-top:1px solid #0e1214;
+  border-bottom:1px solid #0e1214;
+  display:flex;              /* NEU: macht die Section zum Flex-Container */
+}
+
+/* NEU: zentriert den Inhalt (die .container-Box) in der Section */
+.section--inverse > .container{
+  margin:auto;
+}
   .section--inverse .waitlist{background:transparent;border:1px solid rgba(255,255,255,.15);box-shadow:none;border-radius:20px;padding:48px 24px;text-align:center}
   .section--inverse .h2,.section--inverse .sub{color:#fff}
   .section--inverse .sub{opacity:.85}
