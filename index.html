@@ -483,6 +483,8 @@
     Conversation = m.Conversation;
     return Conversation;
   }
+// preload SDK on page load (reduziert die lange "Connecting"-Phase)
+ensureSdk().catch(err => console.warn('[EL] preload failed', err));
 
   async function startConversation(){
     if(running) return;
