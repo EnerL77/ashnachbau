@@ -83,23 +83,22 @@
   /* BILLBOARD */
   .billboard{position:relative;margin:0;padding:0;width:100%;overflow:hidden;border-radius:0}
   .billboard .bg{width:100%;height:min(65vh,620px);object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
-.billboard .overlay{
-  background: none;
-}
+  .billboard .overlay{
+    background: none;
+  }
   .billboard .copy{position:absolute;inset:0;display:grid;align-content:end;padding:clamp(18px,5vw,44px)}
   .billboard h2{font-size:clamp(36px,7vw,84px);line-height:.98;margin:0 0 8px}
   .billboard p{font-size:clamp(16px,2vw,20px);margin:0;color:var(--muted)}
+
   /* Text im Billboard weiß + zentriert */
-.billboard .copy{
-  text-align: center;      /* horizontal zentrieren */
-  justify-items: center;   /* für das Grid zentriert */
-}
-
-.billboard h2,
-.billboard p{
-  color: #fff;             /* weiße Schrift */
-}
-
+  .billboard .copy{
+    text-align: center;
+    justify-items: center;
+  }
+  .billboard h2,
+  .billboard p{
+    color: #fff;
+  }
 
   /* SECTIONS */
   .section{padding:clamp(28px,6vw,56px) 0}
@@ -107,56 +106,55 @@
   .h2{font-size:clamp(28px,4.6vw,44px);line-height:1.1;margin:0 0 10px}
   .sub{color:var(--muted);max-width:70ch;margin:0 0 24px}
 
-.features{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0,260px)); /* 3 Spalten mit fixer max-Breite */
-  gap:22px;
-  margin:40px auto;
-  justify-content:center;     /* Grid als Ganzes mittig */
-  justify-items:center;       /* Inhalt in jeder Zelle mittig */
-  text-align:center;          /* Text zentriert */
-}
+  .features{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,260px));
+    gap:22px;
+    margin:40px auto;
+    justify-content:center;
+    justify-items:center;
+    text-align:center;
+  }
 
-@media (max-width:900px){
-  .features{
-    grid-template-columns:repeat(2, minmax(0,260px));
+  @media (max-width:900px){
+    .features{
+      grid-template-columns:repeat(2, minmax(0,260px));
+    }
   }
-}
-@media (max-width:640px){
-  .features{
-    grid-template-columns:1fr;
+  @media (max-width:640px){
+    .features{
+      grid-template-columns:1fr;
+    }
   }
-}
   @media (max-width:900px){.features{grid-template-columns:1fr 1fr}}
   @media (max-width:640px){.features{grid-template-columns:1fr}}
   .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 0 #e8e1d9}
   .card h3{margin:10px 0 6px;font-size:1.1rem}
   .card p{margin:0;color:var(--muted)}
 
-.howGrid{
-  display:grid;
-  gap:22px;
-  grid-template-columns:repeat(3, minmax(0,260px));
-  justify-content:center;   /* Grid mittig */
-  justify-items:center;     /* Karten-Inhalt mittig */
-  text-align:center;        /* Text zentriert */
-}
-
-@media (max-width:900px){
   .howGrid{
-    grid-template-columns:repeat(2, minmax(0,260px));
+    display:grid;
+    gap:22px;
+    grid-template-columns:repeat(3, minmax(0,260px));
+    justify-content:center;
+    justify-items:center;
+    text-align:center;
   }
-}
 
-@media (max-width:640px){
-  .howGrid{
-    grid-template-columns:1fr;
+  @media (max-width:900px){
+    .howGrid{
+      grid-template-columns:repeat(2, minmax(0,260px));
+    }
   }
-}
-#how .kicker,
-#how .h2 {
-  text-align:center;
-}
+  @media (max-width:640px){
+    .howGrid{
+      grid-template-columns:1fr;
+    }
+  }
+  #how .kicker,
+  #how .h2 {
+    text-align:center;
+  }
 
   @media (max-width:900px){.howGrid{grid-template-columns:1fr}}
 
@@ -179,8 +177,12 @@
     <img src="/public/logo.png" alt="Evermind logo" class="logo">
   </div>
   <nav class="navLinks">
-    <a href="#how">How it works</a>
-    <a href="#features">Features</a>
+    <a href="#how"
+       data-en="How it works"
+       data-de="So funktioniert es">How it works</a>
+    <a href="#features"
+       data-en="Features"
+       data-de="Funktionen">Features</a>
     <div class="langSwitch">
       <button type="button" data-lang="en" class="langBtn is-active">EN</button>
       <button type="button" data-lang="de" class="langBtn">DE</button>
@@ -191,8 +193,14 @@
 <main class="container">
   <section class="hero" aria-labelledby="h1">
     <div class="copy">
-      <h1 id="h1">The Voice<br>that cares</h1>
-      <p class="lead">
+      <h1 id="h1"
+          data-en="The Voice<br>that cares"
+          data-de="Die Stimme<br>die versteht">
+        The Voice<br>that cares
+      </h1>
+      <p class="lead"
+         data-en="EVERMYND isn’t just another chat bot. It’s developed with clinicians and therapists and is trained on evidence-based methods, tested for real impact."
+         data-de="EVERMYND ist keine weitere Chat-App. Entwickelt mit Ärzt:innen und Therapeut:innen und trainiert auf evidenzbasierten Methoden – für spürbare Wirkung im Alltag.">
         EVERMYND isn’t just another chat bot. It’s developed with clinicians and therapists and is trained on evidence-based methods, tested for real impact.
       </p>
       <div class="actions">
@@ -231,8 +239,8 @@
 </main>
 
 
-<!-- 6 Feature-Cards (nun NACH dem Billboard) -->
-<div class="features">
+<!-- 6 Feature-Cards -->
+<div id="features" class="features">
   <!-- 1: Talk, don’t type -->
   <article class="card">
     <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -245,8 +253,12 @@
       <path d="M18 5v13"></path>
       <path d="M22 10v3"></path>
     </svg>
-    <h3 data-i18n="feat.1.title">Talk or type.</h3>
-    <p data-i18n="feat.1.copy">Speak naturally — EVERMYND listens, responds, and helps you process what’s on your mind.</p>
+    <h3 data-en="Talk or type."
+        data-de="Sprechen oder tippen.">Talk or type.</h3>
+    <p data-en="Speak naturally — EVERMYND listens, responds, and helps you process what’s on your mind."
+       data-de="Sprich einfach frei heraus – EVERMYND hört zu, reagiert und hilft dir, deine Gedanken zu sortieren.">
+      Speak naturally — EVERMYND listens, responds, and helps you process what’s on your mind.
+    </p>
   </article>
 
   <!-- 2: Feel lighter in minutes -->
@@ -257,15 +269,29 @@
       <circle cx="12" cy="12" r="4"></circle>
       <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
     </svg>
-    <h3 data-i18n="feat.2.title">Feel better in minutes.</h3>
-    <p data-i18n="feat.2.copy">Short 2–5 min micro-dialogues that bring clarity and calm, whenever you need them.</p>
+    <h3 data-en="Feel better in minutes."
+        data-de="Fühl dich in wenigen Minuten besser.">Feel better in minutes.</h3>
+    <p data-en="Short 2–5 min micro-dialogues that bring clarity and calm, whenever you need them."
+       data-de="Kurze 2–5-Minuten-Dialoge bringen Klarheit und Ruhe – genau dann, wenn du sie brauchst.">
+      Short 2–5 min micro-dialogues that bring clarity and calm, whenever you need them.
+    </p>
   </article>
 
   <!-- 3: Built with clinicians -->
   <article class="card">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stethoscope-icon lucide-stethoscope"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
-    <h3 data-i18n="feat.3.title">Built with clinicians.</h3>
-    <p data-i18n="feat.3.copy">Every conversation is grounded in proven psychological methods — CBT, ACT, mindfulness.</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         class="lucide lucide-stethoscope-icon lucide-stethoscope">
+      <path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/>
+      <path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/>
+    </svg>
+    <h3 data-en="Built with clinicians."
+        data-de="Mit Fachleuten entwickelt.">Built with clinicians.</h3>
+    <p data-en="Every conversation is grounded in proven psychological methods — CBT, ACT, mindfulness."
+       data-de="Jedes Gespräch basiert auf erprobten psychologischen Methoden – CBT, ACT und Achtsamkeit.">
+      Every conversation is grounded in proven psychological methods — CBT, ACT, mindfulness.
+    </p>
   </article>
 
   <!-- 4: Your data stays yours -->
@@ -276,8 +302,12 @@
       <path d="M12 22C7 20.5 4 17 4 12V6l8-4 8 4v6c0 5-3 8.5-8 10z"></path>
       <path d="m9 12 2 2 4-4"></path>
     </svg>
-    <h3 data-i18n="feat.4.title">Your data is 100% safe</h3>
-    <p data-i18n="feat.4.copy">Fully hosted in the EU, encrypted end-to-end, never sold or shared — privacy by design.</p>
+    <h3 data-en="Your data is 100% safe"
+        data-de="Deine Daten sind zu 100&nbsp;% sicher.">Your data is 100% safe</h3>
+    <p data-en="Fully hosted in the EU, encrypted end-to-end, never sold or shared — privacy by design."
+       data-de="Komplett in der EU gehostet, Ende-zu-Ende verschlüsselt, niemals verkauft oder geteilt – Privacy by Design.">
+      Fully hosted in the EU, encrypted end-to-end, never sold or shared — privacy by design.
+    </p>
   </article>
 
   <!-- 5: Always there, never judging -->
@@ -287,68 +317,124 @@
          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"></path>
     </svg>
-    <h3 data-i18n="feat.5.title">Always there, never judging.</h3>
-    <p data-i18n="feat.5.copy">24/7 companion that’s available any time — no appointments, no waiting lists.</p>
+    <h3 data-en="Always there, never judging."
+        data-de="Immer da, nie wertend.">Always there, never judging.</h3>
+    <p data-en="24/7 companion that’s available any time — no appointments, no waiting lists."
+       data-de="24/7-Begleiter – ohne Termine, ohne Warteschleifen, ohne Bewertung.">
+      24/7 companion that’s available any time — no appointments, no waiting lists.
+    </p>
   </article>
 
   <!-- 6: Small habits, real change -->
   <article class="card">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-standing-icon lucide-person-standing"><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg>
-    <h3 data-i18n="feat.6.title">Small habits, big change.</h3>
-    <p data-i18n="feat.6.copy">Daily reflections and voice-based routines that build lasting emotional resilience.</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         class="lucide lucide-person-standing-icon lucide-person-standing">
+      <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/>
+    </svg>
+    <h3 data-en="Small habits, big change."
+        data-de="Kleine Schritte, große Wirkung.">Small habits, big change.</h3>
+    <p data-en="Daily reflections and voice-based routines that build lasting emotional resilience."
+       data-de="Tägliche Reflexionen und Sprach-Routinen stärken Schritt für Schritt deine emotionale Resilienz.">
+      Daily reflections and voice-based routines that build lasting emotional resilience.
+    </p>
   </article>
 </div>
 
-    <!-- Container -->
-  <section class="billboard" aria-labelledby="bb1">
+<!-- Billboard -->
+<section class="billboard" aria-labelledby="bb1">
   <img class="bg" src="/public/billboard1.jpg" alt="Morning light and calm scene">
   <div class="overlay"></div>
   <div class="copy container">
-    <h2 id="bb1">A clinically grounded voice-first AI companion 
-for mental wellbeing, hosted in the EU.</h2>
-    <p>Talk to EVERMYND AND FEEL BETTER.</p>
+    <h2 id="bb1"
+        data-en="A clinically grounded voice-first AI companion for mental wellbeing, hosted in the EU."
+        data-de="Eine klinisch fundierte, sprachbasierte KI-Begleitung für mentale Gesundheit – gehostet in der EU.">
+      A clinically grounded voice-first AI companion
+      for mental wellbeing, hosted in the EU.
+    </h2>
+    <p data-en="Talk to EVERMYND and feel better."
+       data-de="Sprich mit EVERMYND – und fühl dich leichter.">
+      Talk to EVERMYND and feel better.
+    </p>
   </div>
 </section>
-
-  
-   <!--
-<section id="features" class="section container" aria-labelledby="features-h">
-  <p class="kicker">Benefits</p>
-  <h2 id="features-h" class="h2">What you get with EVERMYND</h2>
-  <div class="features">
-    <article class="card"><h3>Talk, don’t type.</h3><p>Speak naturally—EVERMYND listens and responds in real-time.</p></article>
-    <article class="card"><h3>Feel lighter in minutes.</h3><p>Micro-sessions fit into any day—no appointments.</p></article>
-    <article class="card"><h3>Always there, never judging.</h3><p>24/7 companion—available any time you need to talk.</p></article>
-  </div>
-</section>
-  -->
 
 <section class="section container" id="how" aria-labelledby="how-h">
-  <p class="kicker">How it works</p>
-  <h2 id="how-h" class="h2">Three simple steps to feel better</h2>
+  <p class="kicker"
+     data-en="How it works"
+     data-de="So funktioniert es">How it works</p>
+  <h2 id="how-h" class="h2"
+      data-en="Three simple steps to feel better"
+      data-de="Drei einfache Schritte, um dich besser zu fühlen">
+    Three simple steps to feel better
+  </h2>
   <div class="howGrid">
-    <article class="card"><h3>Talk</h3><p>Start a short voice chat whenever you need to clear your mind.</p></article>
-    <article class="card"><h3>Reflect</h3><p>EVERMYND helps you make sense of what you feel—without judgment.</p></article>
-    <article class="card"><h3>Grow</h3><p>Build daily voice routines that strengthen your emotional resilience.</p></article>
+    <article class="card">
+      <h3 data-en="Talk" data-de="Sprechen">Talk</h3>
+      <p data-en="Start a short voice chat whenever you need to clear your mind."
+         data-de="Starte einen kurzen Voice-Chat, wann immer du den Kopf frei bekommen möchtest.">
+        Start a short voice chat whenever you need to clear your mind.
+      </p>
+    </article>
+    <article class="card">
+      <h3 data-en="Reflect" data-de="Reflektieren">Reflect</h3>
+      <p data-en="EVERMYND helps you make sense of what you feel—without judgment."
+         data-de="EVERMYND hilft dir, deine Gefühle zu sortieren – ohne zu urteilen.">
+        EVERMYND helps you make sense of what you feel—without judgment.
+      </p>
+    </article>
+    <article class="card">
+      <h3 data-en="Grow" data-de="Wachsen">Grow</h3>
+      <p data-en="Build daily voice routines that strengthen your emotional resilience."
+         data-de="Baue tägliche Sprach-Routinen auf, die deine emotionale Resilienz stärken.">
+        Build daily voice routines that strengthen your emotional resilience.
+      </p>
+    </article>
   </div>
 </section>
 
 <section class="section section--inverse" id="waitlist">
   <div class="container">
     <div class="waitlist" aria-labelledby="wl-h">
-      <h2 id="wl-h" class="h2">Try EVERMYND</h2>
-      <p class="sub">Join early-access list and get notified when we go live.</p>
+      <h2 id="wl-h" class="h2"
+          data-en="Try EVERMYND"
+          data-de="Teste EVERMYND">Try EVERMYND</h2>
+      <p class="sub"
+         data-en="Join early-access list and get notified when we go live."
+         data-de="Trag dich in die Early-Access-Liste ein und erfahre zuerst, wenn wir live gehen.">
+        Join early-access list and get notified when we go live.
+      </p>
       <form action="https://formspree.io/f/your-form-id" method="POST" class="field">
-        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
-        <button type="submit" class="btn">Join Waitlist</button>
+        <input type="email" name="email"
+               required aria-label="Email address"
+               data-en-placeholder="Enter your email"
+               data-de-placeholder="E-Mail-Adresse eingeben"
+               placeholder="Enter your email">
+        <button type="submit" class="btn"
+                data-en="Join Waitlist"
+                data-de="Zur Warteliste">
+          Join Waitlist
+        </button>
       </form>
     </div>
   </div>
 </section>
 
 <footer class="container">
-  <p>© 2025 EVERMYND All rights reserved.</p>
-  <p><a href="#">Privacy Policy</a> · <a href="#">Imprint</a></p>
+  <p data-en="© 2025 EVERMYND All rights reserved."
+     data-de="© 2025 EVERMYND Alle Rechte vorbehalten.">
+    © 2025 EVERMYND All rights reserved.
+  </p>
+  <p>
+    <a href="#"
+       data-en="Privacy Policy"
+       data-de="Datenschutz">Privacy Policy</a>
+    ·
+    <a href="#"
+       data-en="Imprint"
+       data-de="Impressum">Imprint</a>
+  </p>
 </footer>
 
 <!-- ELEVENLABS: Start/Stop + Button-States -->
@@ -534,15 +620,58 @@ for mental wellbeing, hosted in the EU.</h2>
   setIdle();
 </script>
 
-<!-- super-minimale Language-Logik -->
+<!-- Language-Logik mit Text-Umschaltung -->
 <script>
   function applyLang(lang){
-    document.querySelectorAll('.langBtn').forEach(b=>b.classList.toggle('is-active', b.dataset.lang===lang));
     document.documentElement.lang = lang;
+
+    // Buttons
+    document.querySelectorAll('.langBtn').forEach(b=>{
+      b.classList.toggle('is-active', b.dataset.lang === lang);
+    });
+
+    // Texte mit data-en / data-de
+    document.querySelectorAll('[data-en]').forEach(el=>{
+      const html = el.getAttribute(lang === 'de' ? 'data-de' : 'data-en');
+      if(html !== null){
+        el.innerHTML = html;
+      }
+    });
+
+    // Placeholder (Input-Felder)
+    document.querySelectorAll('[data-en-placeholder]').forEach(el=>{
+      const val = el.getAttribute(lang === 'de' ? 'data-de-placeholder' : 'data-en-placeholder');
+      if(val !== null){
+        el.placeholder = val;
+      }
+    });
+
+    // Talk-Button-Labels
+    const talkBtn = document.getElementById('talkBtn');
+    if(talkBtn){
+      if(lang === 'de'){
+        talkBtn.dataset.labelStart      = "Lass uns sprechen";
+        talkBtn.dataset.labelConnecting = "Verbinde…";
+        talkBtn.dataset.labelTalking    = "Wir sprechen…";
+        talkBtn.dataset.labelStop       = "Stopp";
+        const lab = talkBtn.querySelector('.label');
+        if(lab) lab.textContent = "Lass uns sprechen";
+      } else {
+        talkBtn.dataset.labelStart      = "Let’s talk";
+        talkBtn.dataset.labelConnecting = "Connecting…";
+        talkBtn.dataset.labelTalking    = "Talking…";
+        talkBtn.dataset.labelStop       = "Stop";
+        const lab = talkBtn.querySelector('.label');
+        if(lab) lab.textContent = "Let’s talk";
+      }
+    }
   }
+
   document.querySelectorAll('.langBtn').forEach(btn=>{
     btn.addEventListener('click', ()=>applyLang(btn.dataset.lang));
   });
+
+  // Startsprache: EN
   applyLang('en');
 </script>
 </body>
