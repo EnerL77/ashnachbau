@@ -53,6 +53,84 @@
   h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
   .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
 
+/* MOBILE OVERRIDE — deutlich größere Headline & besseres Spacing */
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(52px, 14vw, 78px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .hero {
+    margin-top: clamp(20px, 6vw, 40px); /* mehr Abstand oben auf mobilen */
+  }
+  .copy {
+    padding-right: 0; /* damit Textbereich vollbreit auf Mobile */
+  }
+  header.container.nav {
+    padding-top: clamp(16px,4vw,24px);
+    padding-bottom: clamp(16px,4vw,24px);
+  }
+}
+
+<section class="ash-block">
+  <div class="container ash-inner">
+
+    <p class="ash-kicker"
+       data-en="How it works"
+       data-de="So funktioniert es">
+      How it works
+    </p>
+
+    <h2 class="ash-title"
+        data-en="Three voice-first steps to feel lighter"
+        data-de="Drei sprachbasierte Schritte, um dich leichter zu fühlen">
+      Three voice-first steps to feel lighter
+    </h2>
+
+    <div class="ash-grid">
+
+      <!-- CARD 1 -->
+      <article class="ash-card">
+        <div class="ash-brush"></div>
+        <div class="ash-content">
+          <h3 data-en="Talk" data-de="Sprechen">Talk</h3>
+          <p data-en="Say what's on your mind — EVERMYND listens and guides you gently."
+             data-de="Sag, was in dir vorgeht – EVERMYND hört zu und begleitet dich sanft.">
+            Say what’s on your mind — EVERMYND listens and guides you gently.
+          </p>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="ash-card">
+        <div class="ash-brush"></div>
+        <div class="ash-content">
+          <h3 data-en="Reflect" data-de="Reflektieren">Reflect</h3>
+          <p data-en="Get new insights by connecting feelings, thoughts and patterns."
+             data-de="Gewinne neue Einsichten, indem Gefühle, Gedanken und Muster verbunden werden.">
+            Get new insights by connecting feelings, thoughts and patterns.
+          </p>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="ash-card">
+        <div class="ash-brush"></div>
+        <div class="ash-content">
+          <h3 data-en="Grow" data-de="Wachsen">Grow</h3>
+          <p data-en="Build voice-based habits that strengthen emotional resilience."
+             data-de="Baue sprachbasierte Routinen auf, die deine emotionale Resilienz stärken.">
+            Build voice-based habits that strengthen emotional resilience.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  
   /* CTA */
   .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
   .cta{display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;border-radius:999px;
@@ -249,6 +327,107 @@
   }
 
   footer{color:var(--muted);text-align:center;padding:48px 0}
+
+  /* ------------------------------
+   ASH STYLE SECTION
+------------------------------ */
+
+.ash-block{
+  background:#161616;
+  padding:clamp(60px,12vw,120px) 0;
+  color:#fff;
+}
+
+.ash-inner{
+  text-align:center;
+  max-width:900px;
+}
+
+.ash-kicker{
+  font-size:.85rem;
+  opacity:.6;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.ash-title{
+  font-size:clamp(26px, 4.6vw, 44px);
+  line-height:1.1;
+  margin:0 auto 42px;
+  max-width:24ch;
+}
+
+.ash-grid{
+  display:grid;
+  gap:28px;
+}
+
+@media (min-width:820px){
+  .ash-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+/* CARD WRAPPER */
+.ash-card{
+  position:relative;
+  background:#1e1e1e;
+  border-radius:20px;
+  padding:38px 26px;
+  overflow:hidden;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+  transition:.3s ease;
+}
+
+.ash-card:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    0 12px 26px rgba(0,0,0,0.5),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+}
+
+/* BRUSH RING BG (like Ash site) */
+.ash-brush{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.12) 0%,
+      rgba(255,255,255,0.02) 48%,
+      rgba(255,255,255,0) 70%
+    );
+  opacity:.35;
+  filter:blur(4px);
+  z-index:1;
+}
+
+/* CARD CONTENT */
+.ash-content{
+  position:relative;
+  z-index:2;
+}
+
+.ash-card h3{
+  margin:0 0 8px;
+  font-size:1.3rem;
+  font-weight:700;
+}
+
+.ash-card p{
+  margin:0;
+  font-size:1rem;
+  line-height:1.45;
+  color:rgba(255,255,255,.75);
+}
+
 </style>
 </head>
 <body>
@@ -328,7 +507,7 @@
     </h2>
     <p
       data-en="EVERMYND is built for the space between therapy sessions, waiting lists and late-night overthinking."
-      data-de="EVERMYND ist ideal zwischen Therapiesitzungen, Wartelisten und späten Grübel-Nächten.">
+      data-de="EVERMYND ist ideal zwischen Therapiesitzungen und für Grübel-Nächte.">
       No one should have to navigate that alone — EVERMYND is built for the space between therapy sessions, waiting lists and late-night overthinking.
     </p>
   </div>
