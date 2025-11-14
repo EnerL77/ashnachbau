@@ -53,6 +53,14 @@
   h1{font-size:clamp(40px,6.8vw,84px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
   .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);line-height:1.5;margin:0 0 22px;max-width:42ch}
 
+  /* MOBILE OVERRIDE — Larger headline on small screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: clamp(44px, 13vw, 64px);
+    line-height: 1.05;
+  }
+}
+
   /* CTA */
   .actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
   .cta{display:inline-flex;align-items:center;gap:.8rem;padding:14px 18px;border-radius:999px;
