@@ -1,180 +1,104 @@
-:root{
-  --bg:#f6efe7;
-  --ink:#171a1c;
-  --muted:#4d5559;
-  --brand:#1d3b44;
-  --line:#e6ded6;
-  --radius:20px;
-  --maxw:1200px;
-}
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EVERMYND – Die Stimme, die dich stärkt</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<style>
+/* Fonts optional — system-ui ist stabiler */
+</style>
+<link rel="stylesheet" href="styles.css" />
+</head>
 
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter;
-  -webkit-font-smoothing:antialiased;
-}
+<body>
 
-/* HERO */
-.hero{
-  padding:64px 24px 48px;
-  text-align:left;
-  max-width:var(--maxw);
-  margin:auto;
-}
+<!-- HERO -->
+<section class="hero">
+  <h1>Die Stimme, die dich stärkt.</h1>
+  <p>Kurze Voice-Chats, entwickelt von Psychiater:innen – für mehr Klarheit, Ruhe und emotionale Stärke.</p>
+  <button class="cta-primary">Early Access sichern</button>
+</section>
 
-.hero h1{
-  font-size:clamp(2.2rem, 7vw, 3rem);
-  font-weight:700;
-  letter-spacing:-0.4px;
-  margin:0 0 16px;
-}
+<!-- TRUST BADGES -->
+<section class="badges">
+  <div class="badge">
+    <span class="b-icon">🩺</span>
+    <p>Mit Psychiater:innen entwickelt</p>
+  </div>
+  <div class="badge">
+    <span class="b-icon">🔒</span>
+    <p>100 % EU-Hosting & Privacy by Design</p>
+  </div>
+  <div class="badge">
+    <span class="b-icon">🎤</span>
+    <p>Voice-First. Immer da, nie wertend.</p>
+  </div>
+</section>
 
-.hero p{
-  font-size:1.1rem;
-  line-height:1.5;
-  margin:0 0 28px;
-  color:var(--muted);
-}
+<!-- FEATURE CARDS -->
+<section class="features">
+  <div class="feature-card">
+    <span class="f-icon">🌿</span>
+    <h3>Klarheit in wenigen Minuten</h3>
+    <p>2–5-Minuten-Dialoge helfen dir, Gedanken zu sortieren und wieder ruhig zu werden.</p>
+  </div>
 
-.cta-primary{
-  background:var(--brand);
-  color:white;
-  border:none;
-  padding:16px 26px;
-  font-size:1.05rem;
-  font-weight:600;
-  border-radius:10px;
-  cursor:pointer;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
+  <div class="feature-card">
+    <span class="f-icon">🧠</span>
+    <h3>Psychologisch fundiert</h3>
+    <p>Basierend auf CBT, ACT und Achtsamkeits-Techniken – wissenschaftlich geprüft.</p>
+  </div>
 
-/* BADGES */
-.badges{
-  padding:0 24px 40px;
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
+  <div class="feature-card">
+    <span class="f-icon">🤝</span>
+    <h3>Nie wertend</h3>
+    <p>Eine Stimme, die dir zuhört – ohne Termine, ohne Druck, ohne Bewertung.</p>
+  </div>
 
-.badge{
-  background:white;
-  padding:16px 20px;
-  border-radius:var(--radius);
-  border:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+  <div class="feature-card">
+    <span class="f-icon">📈</span>
+    <h3>Kleine Schritte, große Wirkung</h3>
+    <p>Regelmäßige Reflektionen stärken deine emotionale Resilienz nachhaltig.</p>
+  </div>
+</section>
 
-.b-icon{
-  font-size:24px;
-}
+<!-- STEPS -->
+<section class="steps">
+  <h2>So funktioniert EVERMYND</h2>
 
-/* FEATURES */
-.features{
-  padding:0 24px 48px;
-  display:grid;
-  gap:24px;
-}
+  <div class="step-card">
+    <div class="step-number">1</div>
+    <h4>Sprechen</h4>
+    <p>Starte einen kurzen Voice-Chat, wann immer dein Kopf zu voll wird.</p>
+  </div>
 
-.feature-card{
-  background:white;
-  padding:26px 22px;
-  border-radius:var(--radius);
-  border:1px solid var(--line);
-  box-shadow:0 4px 14px rgba(0,0,0,0.05);
-}
+  <div class="step-card">
+    <div class="step-number">2</div>
+    <h4>Reflektieren</h4>
+    <p>EVERMYND ordnet deine Gefühle – klar, ruhig und ohne zu urteilen.</p>
+  </div>
 
-.f-icon{
-  font-size:30px;
-  margin-bottom:14px;
-  display:block;
-}
+  <div class="step-card">
+    <div class="step-number">3</div>
+    <h4>Wachsen</h4>
+    <p>Tägliche Sprach-Routinen stärken deine emotionale Resilienz.</p>
+  </div>
+</section>
 
-.feature-card h3{
-  margin:0 0 8px;
-  font-size:1.2rem;
-}
+<!-- WHY VOICE WORKS -->
+<section class="voice-why">
+  <h2>Warum Stimme wirkt</h2>
+  <p>Gesprochene Sprache aktiviert andere Gehirnbereiche als Text. Sie ist unmittelbarer, intuitiver – und emotionaler.  
+  Darum fühlen sich kurze Gespräche oft leichter an als langes Schreiben. EVERMYND nutzt genau diesen Vorteil.</p>
+</section>
 
-.feature-card p{
-  margin:0;
-  color:var(--muted);
-}
+<!-- CTA -->
+<section class="cta-final">
+  <h2>Teste EVERMYND als Erste:r</h2>
+  <p>Trag dich ein und werde Teil der Early-Access-Gruppe.</p>
+  <button class="cta-primary">Jetzt anmelden</button>
+</section>
 
-/* STEPS */
-.steps{
-  padding:20px 24px 50px;
-  max-width:var(--maxw);
-  margin:auto;
-}
-
-.steps h2{
-  font-size:1.8rem;
-  margin-bottom:28px;
-}
-
-.step-card{
-  background:white;
-  padding:22px 20px;
-  border-radius:var(--radius);
-  border:1px solid var(--line);
-  margin-bottom:20px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.05);
-}
-
-.step-number{
-  width:42px;
-  height:42px;
-  background:var(--brand);
-  color:white;
-  font-weight:700;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:12px;
-  font-size:1.1rem;
-}
-
-.step-card h4{
-  margin:0 0 6px;
-  font-size:1.2rem;
-}
-
-/* WHY VOICE WORKS */
-.voice-why{
-  padding:50px 24px;
-  background:#fff;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.voice-why h2{
-  font-size:1.8rem;
-  margin-bottom:16px;
-}
-
-.voice-why p{
-  line-height:1.5;
-  color:var(--muted);
-}
-
-/* CTA */
-.cta-final{
-  padding:60px 24px;
-  text-align:center;
-  background:var(--brand);
-  color:white;
-}
-
-.cta-final h2{
-  font-size:2rem;
-  margin:0 0 12px;
-}
-
-.cta-final p{
-  margin:0 0 24px;
-  font-size:1.1rem;
-}
+</body>
+</html>
